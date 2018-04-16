@@ -77,19 +77,17 @@ Route::post('customerserviceaddimage', 'ImagesProjectController@customerServiceP
 
 
 /* ******** adm_find_us { ************** */
+Route::get('adm_design/order', 'DesignController@indexOrder')->name('design.order');
+Route::resource('adm_design', 'DesignController', ['except' => 'show']);
+Route::put('adm_designpostactive/{id}', 'DesignAjaxController@updateActive');
+Route::put('adm_designpostis_menu/{id}', 'DesignAjaxController@updateIsMenu');
+/* ******** } adm_find_us ************** */
 
-Route::get('adm_findus/order', 'FindUsController@indexOrder')->name('findus.order');
-Route::resource('adm_findus', 'FindUsController', ['except' => 'show']);
-Route::put('adm_finduspostseen/{id}', 'FindUsAjaxController@updateSeen');
-Route::put('adm_finduspostactive/{id}', 'FindUsAjaxController@updateActive');
-Route::put('adm_finduspostis_menu/{id}', 'FindUsAjaxController@updateIsMenu');
-// rout front
-Route::get('find_us', 'FindUsFrontController@index');
-Route::get('find_us/{code}', 'FindUsFrontController@show')->name('findus.show');
-
-//image
-Route::post('findusaddimage', 'ImagesProjectController@findUsPostAddImageItem');
-
+/* ******** adm_find_us { ************** */
+Route::get('adm_main/order', 'MainController@indexOrder')->name('main.order');
+Route::resource('adm_main', 'MainController', ['except' => 'show']);
+Route::put('adm_mainpostactive/{id}', 'MainAjaxController@updateActive');
+Route::put('adm_mainpostis_menu/{id}', 'MainAjaxController@updateIsMenu');
 /* ******** } adm_find_us ************** */
 
 

@@ -120,7 +120,8 @@ return [
     ! and at least, add the ISO code in languages array.
     */
 
-    'languages' => ['en', 'fr', 'de'],
+//    'languages' => ['en', 'fr', 'de'],
+    'languages' => ['en'],
 
     /*
     |--------------------------------------------------------------------------
@@ -130,14 +131,15 @@ return [
    
     'nbrPages' => [
         'front' => [
+            'all' => 10,
             'posts' => 2,
             'testblocks' => 2,
             'worldtcs' => 10,
             'collections' => 10,
             'customerservices' => 10,
-            'finduss' => 10,
         ],
         'back' => [
+            'all' => 10,
             'posts' => 5,
             'testblocks' => 5,
             'worldtcs' => 10,
@@ -145,7 +147,6 @@ return [
             'users' => 5,
             'comments' => 3,
             'customerservices' => 10,
-            'finduss' => 10,
         ],
     ],
 

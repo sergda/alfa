@@ -58,14 +58,6 @@ class DatabaseSeeder extends Seeder
             
         ]);
 
-        DB::table('tags')->insert([
-
-            ['tag' => 'Tag1'],
-            ['tag' => 'Tag2'],
-            ['tag' => 'Tag3'],
-            ['tag' => 'Tag4']
-
-        ]);
 
         DB::table('posts')->insert([
 
@@ -152,20 +144,5 @@ class DatabaseSeeder extends Seeder
         ]);
         */
 
-        DB::table('comments')->insert([
-
-            ['content' => Lipsum::medium()->text(3),
-            'user_id' => 2,
-            'post_id' => 1],
-
-            ['content' =>Lipsum::medium()->text(2),
-            'user_id' => 2,
-            'post_id' => 2],
-
-            ['content' => Lipsum::medium()->text(3),
-            'user_id' => 3,
-            'post_id' => 1]
-
-        ]);
     }
 }

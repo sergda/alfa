@@ -14,6 +14,12 @@
   <body>
 
     <header>
+        @yield('main_slider')
+
+
+
+
+
 
         <div class="brand">
             <a href="/" title="Main">
@@ -21,6 +27,11 @@
             </a>
         </div>
         <div id="flags" class="text-center"></div>
+
+
+
+
+
         <nav class="navbar navbar-default">
             <div class="container">
                 <div class="navbar-header">
@@ -117,33 +128,6 @@
                             </ul>
                         </li>
 
-
-                        <li class="dropdown" {!! classActivePath('/find_us') !!}>
-                            {!! link_to('/find_us', trans('front/site.findus'), "title=".trans('front/site.findus')." data-toggle='dropdown' class='dropdown-toggle'" ) !!}
-                            <ul class="dropdown-menu">
-                                @php
-                                    $worldtcs = DB::table('finduss')->select('slug', 'en_title', 'fr_title', 'de_title')->whereIs_menu(true)->whereActive(true)->orderBy('sort', 'asc')->get();
-                                @endphp
-                                @foreach( $worldtcs as $item )
-                                    @if( config('app.locale') == "en" )
-                                        @php
-                                            $title = $item->en_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "fr" )
-                                        @php
-                                            $title = $item->fr_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "de" )
-                                        @php
-                                            $title = $item->de_title;
-                                        @endphp
-                                    @endif
-                                    <li>
-                                        {!! link_to('/find_us/'.$item->slug, $title, "title=".$title ) !!}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
 
 
                         <li {!! classActivePath('/order-catalogue') !!}>

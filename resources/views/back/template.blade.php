@@ -57,7 +57,7 @@
                                 <a href="{{ url('/logout') }}" id="logout">
                                     <span class="fa fa-fw fa-power-off"></span>
                                     {{ trans('back/admin.logout') }}
-                                </a>   
+                                </a>
                                 {!! Form::open(['url' => '/logout', 'id' => 'logout-form']) !!}{!! Form::close() !!}
                             </li>
                         </ul>
@@ -110,35 +110,21 @@
                             </ul>
                         </li>
 --}}
-                        <li {!! classActiveSegment(1, 'worldtc') !!}>
-                            <a href="#" data-toggle="collapse" data-target="#worldtcmenu"><span class="fa fa-fw fa-pencil"></span> {{ trans('back/admin.worldtc') }} <span class="fa fa-fw fa-caret-down"></span></a>
-                            <ul id="worldtcmenu" class="collapse">
-                                <li><a href="{!! url('worldtc') !!}">{{ trans('back/admin.see-all') }}</a></li>
-                                <li><a href="{!! url('worldtc/create') !!}">{{ trans('back/admin.add') }}</a></li>
-                            </ul>
-                        </li>
 
-                            <li {!! classActiveSegment(1, 'adm_collection') !!}>
-                                <a href="#" data-toggle="collapse" data-target="#collectionmenu"><span class="fa fa-fw fa-pencil"></span> {{ trans('back/admin.collection') }} <span class="fa fa-fw fa-caret-down"></span></a>
-                                <ul id="collectionmenu" class="collapse">
-                                    <li><a href="{!! url('adm_collection') !!}">{{ trans('back/admin.see-all') }}</a></li>
-                                    <li><a href="{!! url('adm_collection/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                            <li {!! classActiveSegment(1, 'adm_main') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#mainmenu"><span class="fa fa-fw fa-pencil"></span> Главная слайдер <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="mainmenu" class="collapse">
+                                    <li><a href="{!! url('adm_main') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_main/create') !!}">{{ trans('back/admin.add') }}</a></li>
                                 </ul>
                             </li>
 
-                            <li {!! classActiveSegment(1, 'adm_customerservice') !!}>
-                                <a href="#" data-toggle="collapse" data-target="#customerservicemenu"><span class="fa fa-fw fa-pencil"></span> {{ trans('back/admin.customerservice') }} <span class="fa fa-fw fa-caret-down"></span></a>
-                                <ul id="customerservicemenu" class="collapse">
-                                    <li><a href="{!! url('adm_customerservice') !!}">{{ trans('back/admin.see-all') }}</a></li>
-                                    <li><a href="{!! url('adm_customerservice/create') !!}">{{ trans('back/admin.add') }}</a></li>
-                                </ul>
-                            </li>
 
-                            <li {!! classActiveSegment(1, 'adm_findus') !!}>
-                                <a href="#" data-toggle="collapse" data-target="#findusmenu"><span class="fa fa-fw fa-pencil"></span> {{ trans('back/admin.findus') }} <span class="fa fa-fw fa-caret-down"></span></a>
-                                <ul id="findusmenu" class="collapse">
-                                    <li><a href="{!! url('adm_findus') !!}">{{ trans('back/admin.see-all') }}</a></li>
-                                    <li><a href="{!! url('adm_findus/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                            <li {!! classActiveSegment(1, 'adm_design') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#designmenu"><span class="fa fa-fw fa-pencil"></span> Дизайнеры <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="designmenu" class="collapse">
+                                    <li><a href="{!! url('adm_design') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_design/create') !!}">{{ trans('back/admin.add') }}</a></li>
                                 </ul>
                             </li>
 

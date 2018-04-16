@@ -6,6 +6,7 @@ use App\Http\Requests\PostRequest;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
+use App\Models\Main;
 
 class HomeController extends Controller
 {
@@ -14,11 +15,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __invoke()
+    public function __invoke(Main $main)
     {
-
         //dd(phpinfo());
-        return view('front.index');
+
+        $this->model = $main;
+        $main_page_slider = $this->model->whereActive(true)->get();
+        return view('front.index', compact('main_page_slider'));
     }
 
     public function postSend(PostRequest $request) {
@@ -29,7 +32,7 @@ class HomeController extends Controller
             $errors['code'] = "Вы ведете себя как робот";
         }
         $fields = [
-            "name" => "Имя",
+            "name" => "Тьфу",
             "code" => "code",
 //            "phone" => "Телефон",
             "email" => "E-mail",

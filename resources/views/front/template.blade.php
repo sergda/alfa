@@ -14,151 +14,78 @@
   <body>
 
     <header>
-        @yield('main_slider')
-
-
-
-
-
-
-        <div class="brand">
-            <a href="/" title="Main">
-                <img width="270" src="/img/tc_log1.png" class="img-fluid" alt="trois">
-            </a>
-        </div>
-        <div id="flags" class="text-center"></div>
-
-
-
-
 
         <nav class="navbar navbar-default">
             <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">{{ trans('front/site.title') }}</a>
+
+                <div class="row text-center">
+                    <div class="col-lg-4">
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="dropdown" {!! classActivePath('/collezione') !!}>
+                                    {!! link_to('/collezione', 'COLLEZIONE', "title='collezione'" ) !!}
+                                    <ul class="dropdown-menu">
+                                            <li>
+                                                {!! link_to('/link1', 'link1', "title='link1'" ) !!}
+                                            </li>
+                                            <li>
+                                                {!! link_to('/link2', 'link2', "title='link2'" ) !!}
+                                            </li>
+                                    </ul>
+                                </li>
+
+                                <li {!! classActivePath('/storia') !!}>
+                                    {!! link_to('/storia', 'STORIA', "title='storia'" ) !!}
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        ALFA ALFA
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li {!! classActivePath('/contato') !!}>
+                                    {!! link_to('/contato', 'CONTATO', "title='contato'" ) !!}
+                                </li>
+
+                                <li {!! classActivePath('/societa') !!}>
+                                    {!! link_to('/societa', 'SOSIETA', "title='societa'" ) !!}
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
 
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown" {!! classActivePath('/world_tc') !!}>
-                            {!! link_to('/world_tc', trans('front/site.world'), "title=".trans('front/site.world')." data-toggle='dropdown' class='dropdown-toggle'" ) !!}
-                            <ul class="dropdown-menu">
-                                @php
-                                 $worldtcs = DB::table('worldtcs')->select('slug', 'en_title', 'fr_title', 'de_title')->whereIs_menu(true)->whereActive(true)->orderBy('sort', 'asc')->get();
-                                @endphp
-                                @foreach( $worldtcs as $item )
-                                    @if( config('app.locale') == "en" )
-                                        @php
-                                            $title = $item->en_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "fr" )
-                                        @php
-                                            $title = $item->fr_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "de" )
-                                        @php
-                                            $title = $item->de_title;
-                                        @endphp
-                                    @endif
-                                    <li>
-                                        {!! link_to('/world_tc/'.$item->slug, $title, "title=".$title ) !!}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-
-                        <li class="dropdown" {!! classActivePath('/collection') !!}>
-                            {!! link_to('/collection', trans('front/site.Collection'), "title=".trans('front/site.Collection')." data-toggle='dropdown' class='dropdown-toggle'" ) !!}
-                            <ul class="dropdown-menu">
-                                @php
-                                    $worldtcs = DB::table('collections')->select('slug', 'en_title', 'fr_title', 'de_title')->whereIs_menu(true)->whereActive(true)->orderBy('sort', 'asc')->get();
-                                @endphp
-                                @foreach( $worldtcs as $item )
-                                    @if( config('app.locale') == "en" )
-                                        @php
-                                            $title = $item->en_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "fr" )
-                                        @php
-                                            $title = $item->fr_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "de" )
-                                        @php
-                                            $title = $item->de_title;
-                                        @endphp
-                                    @endif
-                                    <li>
-                                        {!! link_to('/collection/'.$item->slug, $title, "title=".$title ) !!}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-
-                        <li class="dropdown" {!! classActivePath('/customer_service') !!}>
-                            {!! link_to('/customer_service', trans('front/site.CustomerService'), "title=".trans('front/site.CustomerService')." data-toggle='dropdown' class='dropdown-toggle'" ) !!}
-
-                            <ul class="dropdown-menu">
-                                @php
-                                    $worldtcs = DB::table('customerservices')->select('slug', 'en_title', 'fr_title', 'de_title')->whereIs_menu(true)->whereActive(true)->orderBy('sort', 'asc')->get();
-                                @endphp
-                                @foreach( $worldtcs as $item )
-                                    @if( config('app.locale') == "en" )
-                                        @php
-                                            $title = $item->en_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "fr" )
-                                        @php
-                                            $title = $item->fr_title;
-                                        @endphp
-                                    @elseif( config('app.locale') == "de" )
-                                        @php
-                                            $title = $item->de_title;
-                                        @endphp
-                                    @endif
-                                    <li>
-                                        {!! link_to('/customer_service/'.$item->slug, $title, "title=".$title ) !!}
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </li>
-
-
-
-                        <li {!! classActivePath('/order-catalogue') !!}>
-                            {!! link_to('/order-catalogue', trans('front/site.OrderCatalogue'), "title=".trans('front/site.OrderCatalogue') ) !!}
-                        </li>
-
-
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><img width="18" height="18" alt="{{ session('locale') }}"  src="{!! asset('img/' . session('locale') . '-flag.png') !!}" />&nbsp;{{ trans('front/site.'.session('locale').'_lang') }}</a>
-                            <ul class="dropdown-menu">
-                            @foreach ( config('app.languages') as $user)
-                                @if($user !== config('app.locale'))
-                                    <li>
-                                        <a href="{!! url('language') !!}/{{ $user }}">
-                                            <img width="18" height="18" alt="{{ $user }}" src="{!! asset('img/' . $user . '-flag.png') !!}">&nbsp;{{ trans('front/site.'.$user.'_lang') }}
-                                        </a>
-                                    </li>
-                                @endif
-                            @endforeach
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
-        @yield('header')    
+
+        @yield('main_slider')
+
     </header>
     @yield('body')
     <main class="container">
         @yield('main')
     </main>
+
+
+
 
     <footer class="text-muted">
         <div class="container text-center">
@@ -227,7 +154,7 @@
     {!! HTML::script('js/jquery-3.0.0.js') !!}
     {!! HTML::script('js/jquery-migrate-3.0.1.min.js') !!}
     {!! HTML::script('js/tether.min.js') !!}
-    {!! HTML::script('js/bootstrap.min.js') !!}
+    {!! HTML::script('js/bootstrap3.3.7.min.js') !!}
     {!! HTML::script('js/jqBootstrapValidation.js') !!}
     {!! HTML::script('js/jquery.form.min.js') !!}
     {!! HTML::script('js/jquery.colorbox-min.js') !!}

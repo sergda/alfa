@@ -12,7 +12,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     @foreach( $main_page_slider as $itemKey=>$item )
-                    <div class="carousel-item @if( $itemKey == 0 ) active @endif">
+                    <div class="item @if( $itemKey == 0 ) active @endif">
 
                         @if( isset($item->url) )<a href="{!! $item->url !!}" title="">@endif
                             <img data-src="{!! $item->detail_picture !!}" alt="{!! $item->preview_picture_description !!}" src="{!! $item->detail_picture !!}" data-holder-rendered="true" style="width: 1280px; height: 500px;">
@@ -26,6 +26,7 @@
                     </div>
                     @endforeach
                 </div>
+                {{--
                 <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
                     <span class="icon-prev" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
@@ -33,7 +34,7 @@
                 <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
                     <span class="icon-next" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
-                </a>
+                </a> --}}
             </div>
 
         </section>
@@ -45,14 +46,42 @@
 
 @section('main')
 
-    <section class="text-center">
-        {{-- <img src="/img/schlossatelier-slider-5-e.jpg" class="img-fluid"> --}}
-        <img src="/files/71CUTLnv-sL201.jpg" class="img-fluid" alt="trois">
+    <section class="text-center main-prod">
+        <div class="row">
+            <div class="col-lg-6">
+                <div style="background: #091634; height: 440px; width: 100%">11</div>
+            </div>
+            <div class="col-lg-3">
+                <div style="background: #A0958C; height: 440px; width: 100%">22</div>
+            </div>
+            <div class="col-lg-3">
+                <div style="background: #EDEDED; height: 440px; width: 100%">33</div>
+            </div>
+        </div>
     </section>
-    <section class="jumbotron marTB10 mainText">
-
-        {!! trans('front/site.mainText') !!}
-
+    <section class="text-center main-prod">
+        <div class="row">
+            <div class="col-lg-3">
+                <div style="background: #CAC9D0; height: 440px; width: 100%">11</div>
+            </div>
+            <div class="col-lg-3">
+                <div style="background: #EDEDED; height: 440px; width: 100%">11</div>
+            </div>
+            <div class="col-lg-3">
+                <div style="background: #BECBDE; height: 440px; width: 100%">22</div>
+            </div>
+            <div class="col-lg-3">
+                <div style="background: #0C182D; height: 440px; width: 100%">33</div>
+            </div>
+        </div>
+    </section>
+    <section class="text-center main-prod">
+        <div class="row">
+            <div class="col-lg-12 fedback">
+                <div class="span1" style="background: #0C182D; width: 50%;">11</div>
+                <div class="span2" style="background: #CAC9D0; width: 50%;">22</div>
+            </div>
+        </div>
     </section>
 
 

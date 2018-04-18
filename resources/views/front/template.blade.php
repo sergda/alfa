@@ -48,9 +48,9 @@
 
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" style="padding-top: 23px;">
 
-                        ALFA ALFA
+                        <a href="/" title="main"><img src="/img/logo.jpg" alt="logo"></a>
 
                     </div>
 
@@ -88,17 +88,16 @@
 
 
     <footer class="text-muted">
-        <div class="container text-center">
+        <div class="row">
 
-            <div class="footerLogo">
-                <span class="footerHr"></span>
-                <img src="/img/footerlogo1.png" class="img-fluid">
+            <div class="col-lg-6 footer-logo-block">
+                <img src="/img/logo.jpg" alt="logo">
             </div>
-            <div class="fedback-button">
-                <span>
-                    <a href="#" class="" data-toggle="modal" data-target="#myModal">{{  trans('front/site.feedback') }} </a>
-                    <a href="#" class="" data-toggle="modal" data-target="#myModal">{{  trans('front/site.feedback1') }} </a>
-                </span>
+            <div class="col-lg-6">
+                <div class="footer-right-copy">
+                    <span class="coppy">&copy; Produciamo mobili dal 1990</span>
+                    <span class="flag"><img src="/img/flag.jpg" alt="" /></span>
+                </div>
             </div>
 
         </div>

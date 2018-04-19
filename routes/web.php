@@ -2,6 +2,7 @@
 
 // Home
 Route::get('/', 'HomeController')->name('home');
+Route::get('/contatto', 'HomeController@contatto');
 
 // Language
 Route::get('language/{lang}', 'LanguageController')

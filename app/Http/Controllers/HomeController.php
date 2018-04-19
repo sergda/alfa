@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use App\Models\Main;
+use App\Models\Design;
 
 class HomeController extends Controller
 {
@@ -15,13 +16,21 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __invoke(Main $main)
+
+    protected $design;
+
+    public function __invoke(Main $main, Design $design)
     {
         //dd(phpinfo());
-
+        $this->design = $design;
+        $main_page_design = $this->design->whereActive(true)->get();
         $this->model = $main;
         $main_page_slider = $this->model->whereActive(true)->get();
-        return view('front.index', compact('main_page_slider'));
+        return view('front.index', compact('main_page_slider', 'main_page_design'));
+    }
+
+    public function contatto() {
+        return view('front.contatto.show');
     }
 
     public function postSend(PostRequest $request) {

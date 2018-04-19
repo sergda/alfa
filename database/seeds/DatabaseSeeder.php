@@ -23,14 +23,14 @@ class DatabaseSeeder extends Seeder
         DB::table('users')->insert([
 
             ['username' => 'GreatAdmin',
-            'email' => 'bitrix_serg@mail.ru',
+            'email' => 'sergda@silversite.ru',
             'password' => bcrypt('admin'),
             'seen' => true,
             'role_id' => 1,
             'valid' => true,
             'confirmed' => true],
 
-            ['username' => 'bitrix_serg@mail.ru',
+            ['username' => 'redac',
             'email' => 'redac@la.fr',
             'password' => bcrypt('redac'),
             'seen' => true,

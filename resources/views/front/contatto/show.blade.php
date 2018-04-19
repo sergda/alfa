@@ -1,152 +1,73 @@
 @extends('front.template')
 
-@section('main_slider')
+@section('head')
 
-    @if( isset($main_page_slider) )
-        <section class="text-center">
-            <div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                        @foreach( $main_page_slider as $itemKey=>$item )
-                            <li data-target="#carousel-example-captions" data-slide-to="{!! $itemKey !!}" class="@if( $itemKey == 0 ) active @endif"></li>
-                        @endforeach
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    @foreach( $main_page_slider as $itemKey=>$item )
-                    <div class="item @if( $itemKey == 0 ) active @endif">
+    <meta name="csrf-token" content="{{ csrf_token() }}" xmlns="http://www.w3.org/1999/html">
 
-                        @if( isset($item->url) )<a href="{!! $item->url !!}" title="">@endif
-                            <img data-src="{!! $item->detail_picture !!}" alt="{!! $item->preview_picture_description !!}" src="{!! $item->detail_picture !!}" data-holder-rendered="true" style="width: 1280px; height: 500px;">
-                        @if( isset($item->url) )</a>@endif
-                           {{--
-                            <div class="carousel-caption">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                            </div>
-                            --}}
-                    </div>
-                    @endforeach
-                </div>
-                {{--
-                <a class="left carousel-control" href="#carousel-example-captions" role="button" data-slide="prev">
-                    <span class="icon-prev" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-captions" role="button" data-slide="next">
-                    <span class="icon-next" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a> --}}
-            </div>
-
-        </section>
-    @endif
+    <title>contatto</title>
+    <meta name="description" content="contatto">
+    <meta name="keywords" content="contatto">
 
 
-@endsection
 
+
+@stop
 
 @section('main')
 
-    <section class="text-center main-prod">
+    <section class="text-left main-prod">
         <div class="row">
             <div class="col-lg-6">
-                <div style="background: #091634; height: 440px; width: 100%">11</div>
-            </div>
-            <div class="col-lg-3">
-                <div style="background: #A0958C; height: 440px; width: 100%">22</div>
-            </div>
-            <div class="col-lg-3">
-                <div style="background: #EDEDED; height: 440px; width: 100%">33</div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center main-prod">
-        <div class="row">
-            <div class="col-lg-3">
-                <div style="background: #CAC9D0; height: 440px; width: 100%">11</div>
-            </div>
-            <div class="col-lg-3">
-                <div style="background: #EDEDED; height: 440px; width: 100%">11</div>
-            </div>
-            <div class="col-lg-3">
-                <div style="background: #BECBDE; height: 440px; width: 100%">22</div>
-            </div>
-            <div class="col-lg-3">
-                <div style="background: #0C182D; height: 440px; width: 100%">33</div>
-            </div>
-        </div>
-    </section>
-    <section class="text-center main-prod">
-        <div class="row">
-            <div class="col-lg-12 fedback">
-                <div class="span1"><span> Riceve delle notizie su nuove collezioni </span></div>
-                <div class="span2">
 
-                    <div class="feedbackForm">
-                        <form name="sentMessage" class="form form-register1" id="fedbackForm"  novalidate>
-                            {{ csrf_field() }}
-                            <div class="modal-body form-group">
-                                <div class="control-group">
-                                    <div class="controls">
+                <div class="con-head">
+                    CONTATTO
+                </div>
+                <div class="con-text">
+                    Casa di Cura la Madonnina<br />
+                    Via Quadronno, 29, 20122<br />
+                    Milano, Italy
+                </div>
+                <div class="con-tel">
+                    (+39 02) 583951
+                </div>
+                <div class="con-hr"></div>
+                <div class="con-feedback">
+
+                    <form name="sentMessage" class="form form-register1" id="fedbackForm"  novalidate>
+                        {{ csrf_field() }}
+                        <div class="modal-body form-group">
+                            <div class="control-group">
+                                <div class="row">
+                                    <div class="controls col-lg-6">
                                         <input type="text" name="name" class="form-control" onblur='if(this.value=="") this.placeholder="Nome"' onfocus='if(this.value=="Nome") this.value=""' placeholder="NOME" id="name" required data-validation-required-message="Please, indicate Your Nome" />
                                         <p class="help-block"></p>
                                     </div>
-                                    <div class="controls">
+
+                                    <div class="controls col-lg-6">
                                         <input type="email" name="email" class="form-control" onblur='if(this.value=="") this.placeholder="Your e-mail"' onfocus='if(this.value=="Your e-mail") this.value=""' placeholder="E-MAIL" id="email" required data-validation-required-message="Please, indicate Your e-mail" />
                                     </div>
-                                    <input type="hidden" name="name" value="">
-                                    <input type="hidden" name="catalogueFeedback" value="catalogueFeedback">
-                                    <button type="submit" class="btn form-button">
+                                </div>
+                                <div class="controls">
+                                    <textarea name="text" class="form-control" placeholder="TEXT" id="text" /></textarea>
+                                </div>
+                                <input type="hidden" name="name" value="">
+                                <input type="hidden" name="catalogueFeedback" value="catalogueFeedback">
+                                <button type="submit" class="btn form-button">
                                         <span>
                                             INVIARE
                                         </span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="success"> </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @if( isset($main_page_slider) )
-        <section class="text-center main-prod">
-
-            <div class="design-head">SOCIET?</div>
-            <div class="row">
-                @foreach($main_page_design as $itemKey=>$item)
-                    <div class="col-lg-3">
-                        @php
-                        $src = str_replace('\\', '/', $item->preview_picture);
-                        @endphp
-                        <div class="hex one item{!! $itemKey !!}">
-                            <div class="images1">
-                                <div class="images2" style="background-image: url({!! $src !!});"></div>
+                                </button>
                             </div>
                         </div>
-                        <div class="design-name">{!! $item->name !!}</div>
-                        <div>{!! $item->slogan !!}</div>
-                    </div>
-                @endforeach
-            </div>
+                        <div id="success"> </div>
+                    </form>
 
-        </section>
-    @endif
-    <section class="text-center main-prod">
-        <div class="row mainMapBlock">
-            <div class="col-lg-3">
-                <div class="mainMapBlock-head">indirizzo</div>
-                <div class="mainMapBlock-text">
-                    Milano,<br />
-                    Via Da Vinci,<br />
-                    34
                 </div>
-                <button class="btn btn-wite"> SCRIVERE A NOI</button>
+
             </div>
-            <div class="col-lg-9">
-                <div id="map"></div>
+            <div class="col-lg-6">
+
+                <div id="mapContact"></div>
                 <script>
                     function initMap() {
 
@@ -462,7 +383,7 @@
                                 ],
                                 {name: 'Styled Map'});
 
-                        var map = new google.maps.Map(document.getElementById('map'), {
+                        var map = new google.maps.Map(document.getElementById('mapContact'), {
                             center: {lat: 44.379006, lng: 10.926891},
                             zoom: 7,
                             mapTypeControlOptions: {
@@ -478,9 +399,9 @@
                 <script async defer
                         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqPXJEXMaOspwq1oRDGCAaj8ySAFFmQJQ&language=en&callback=initMap">
                 </script>
+
             </div>
         </div>
     </section>
 
-
-@endsection
+@stop

@@ -3,7 +3,7 @@
 // Home
 Route::get('/', 'HomeController')->name('home');
 Route::get('/contatto', 'HomeController@contatto');
-
+Route::get('/collezione', 'HomeController@collezione');
 // Language
 Route::get('language/{lang}', 'LanguageController')
     ->where('lang', implode('|', config('app.languages')));
@@ -14,113 +14,81 @@ Route::get('admin', 'AdminController')->name('admin');
 // Medias
 Route::get('medias', 'FilemanagerController')->name('medias');
 
-// TestBlock
-//Route::get('block-test/tag', 'TestBlockFrontController@tag');
-Route::get('block-test/search', 'TestBlockFrontController@search');
-Route::get('testblock/order', 'TestBlockController@indexOrder')->name('testblock.order');
-Route::resource('testblock', 'TestBlockController', ['except' => 'show']);
-Route::put('testblockpostseen/{id}', 'TestBlockAjaxController@updateSeen');
-Route::put('testblockpostactive/{id}', 'TestBlockAjaxController@updateActive');
+
+/* ******** Beds { ************** */
+
+Route::get('adm_beds/order', 'BedsController@indexOrder')->name('beds.order');
+Route::resource('adm_beds', 'BedsController', ['except' => 'show']);
+Route::put('adm_bedspostactive/{id}', 'BedsAjaxController@updateActive');
+Route::put('adm_bedspostis_menu/{id}', 'BedsAjaxController@updateIsMenu');
+Route::put('adm_bedspostis_main/{id}', 'BedsAjaxController@updateIsMain');
 
 // rout front
-Route::get('block-test', 'TestBlockFrontController@index');
-Route::get('block-test/{testblock}', 'TestBlockFrontController@show')->name('testblock.show');
+Route::get('beds', 'BedsFrontController@index');
+Route::get('beds/{code}', 'BedsFrontController@show')->name('beds.show');
 
-/* ******** World Tc { ************** */
+/* ******** } Beds ************** */
 
-Route::get('worldtc/order', 'WorldTcController@indexOrder')->name('worldtc.order');
-Route::resource('worldtc', 'WorldTcController', ['except' => 'show']);
-Route::put('worldtcpostseen/{id}', 'WorldTcAjaxController@updateSeen');
-Route::put('worldtcpostactive/{id}', 'WorldTcAjaxController@updateActive');
-Route::put('worldtcpostis_menu/{id}', 'WorldTcAjaxController@updateIsMenu');
+/* ******** Mattress { ************** */
+
+Route::get('adm_mattress/order', 'MattressController@indexOrder')->name('mattress.order');
+Route::resource('adm_mattress', 'MattressController', ['except' => 'show']);
+Route::put('adm_mattresspostactive/{id}', 'MattressAjaxController@updateActive');
+Route::put('adm_mattresspostis_menu/{id}', 'MattressAjaxController@updateIsMenu');
+Route::put('adm_mattresspostis_main/{id}', 'MattressAjaxController@updateIsMain');
 
 // rout front
-Route::get('world_tc', 'WorldTcFrontController@index');
-Route::get('world_tc/{code}', 'WorldTcFrontController@show')->name('worldtc.show');
+Route::get('mattress', 'MattressFrontController@index');
+Route::get('mattress/{code}', 'MattressFrontController@show')->name('mattress.show');
 
-//image
-Route::post('worldtcaddimage', 'ImagesProjectController@worldtcPostAddImageItem');
+/* ******** } Mattress ************** */
 
-/* ******** } World Tc ************** */
+/* ******** Curbstones { ************** */
 
-/* ******** adm_collection { ************** */
+Route::get('adm_curbstones/order', 'CurbstonesController@indexOrder')->name('curbstones.order');
+Route::resource('adm_curbstones', 'CurbstonesController', ['except' => 'show']);
+Route::put('adm_curbstonespostactive/{id}', 'CurbstonesAjaxController@updateActive');
+Route::put('adm_curbstonespostis_menu/{id}', 'CurbstonesAjaxController@updateIsMenu');
+Route::put('adm_curbstonespostis_main/{id}', 'CurbstonesAjaxController@updateIsMain');
 
-Route::get('adm_collection/order', 'CollectionController@indexOrder')->name('collection.order');
-Route::resource('adm_collection', 'CollectionController', ['except' => 'show']);
-Route::put('adm_collectionpostseen/{id}', 'CollectionAjaxController@updateSeen');
-Route::put('adm_collectionpostactive/{id}', 'CollectionAjaxController@updateActive');
-Route::put('adm_collectionpostis_menu/{id}', 'CollectionAjaxController@updateIsMenu');
 // rout front
-Route::get('collection', 'CollectionFrontController@index');
-Route::get('collection/{code}', 'CollectionFrontController@show')->name('collection.show');
+Route::get('curbstones', 'CurbstonesFrontController@index');
+Route::get('curbstones/{code}', 'CurbstonesFrontController@show')->name('curbstones.show');
 
-//image
-Route::post('collectionaddimage', 'ImagesProjectController@collectionPostAddImageItem');
+/* ******** } Curbstones ************** */
 
-/* ******** } adm_collection ************** */
+/* ******** Pouffes { ************** */
 
+Route::get('adm_pouffes/order', 'PouffesController@indexOrder')->name('pouffes.order');
+Route::resource('adm_pouffes', 'PouffesController', ['except' => 'show']);
+Route::put('adm_pouffespostactive/{id}', 'PouffesAjaxController@updateActive');
+Route::put('adm_pouffespostis_menu/{id}', 'PouffesAjaxController@updateIsMenu');
+Route::put('adm_pouffespostis_main/{id}', 'PouffesAjaxController@updateIsMain');
 
-/* ******** adm_customer_service { ************** */
-
-Route::get('adm_customerservice/order', 'CustomerServiceController@indexOrder')->name('customerservice.order');
-Route::resource('adm_customerservice', 'CustomerServiceController', ['except' => 'show']);
-Route::put('adm_customerservicepostseen/{id}', 'CustomerServiceAjaxController@updateSeen');
-Route::put('adm_customerservicepostactive/{id}', 'CustomerServiceAjaxController@updateActive');
-Route::put('adm_customerservicepostis_menu/{id}', 'CustomerServiceAjaxController@updateIsMenu');
 // rout front
-Route::get('customer_service', 'CustomerServiceFrontController@index');
-Route::get('customer_service/{code}', 'CustomerServiceFrontController@show')->name('customerservice.show');
+Route::get('pouffes', 'PouffesFrontController@index');
+Route::get('pouffes/{code}', 'PouffesFrontController@show')->name('pouffes.show');
 
-//image
-Route::post('customerserviceaddimage', 'ImagesProjectController@customerServicePostAddImageItem');
+/* ******** } Pouffes ************** */
 
-/* ******** } adm_customer_service ************** */
-
-
-/* ******** adm_find_us { ************** */
+/* ******** Design { ************** */
 Route::get('adm_design/order', 'DesignController@indexOrder')->name('design.order');
 Route::resource('adm_design', 'DesignController', ['except' => 'show']);
 Route::put('adm_designpostactive/{id}', 'DesignAjaxController@updateActive');
 Route::put('adm_designpostis_menu/{id}', 'DesignAjaxController@updateIsMenu');
-/* ******** } adm_find_us ************** */
+/* ******** } Design ************** */
 
-/* ******** adm_find_us { ************** */
+/* ******** Main { ************** */
 Route::get('adm_main/order', 'MainController@indexOrder')->name('main.order');
 Route::resource('adm_main', 'MainController', ['except' => 'show']);
 Route::put('adm_mainpostactive/{id}', 'MainAjaxController@updateActive');
 Route::put('adm_mainpostis_menu/{id}', 'MainAjaxController@updateIsMenu');
-/* ******** } adm_find_us ************** */
-
-
-/* ******** adm_order_catalogue { ************** */
-Route::get('order-catalogue', 'OrderCatalogueFrontController@show');
-/* ******** } adm_order_catalogue ************** */
-
-
+/* ******** } Main ************** */
 
 Route::put('delete-image/{id}', 'ImagesProjectController@destroy');
 
+//mail
 Route::post('/send.json', 'HomeController@postSend');
-
-// Blog 
-//Route::get('blog/tag', 'BlogFrontController@tag');
-Route::get('blog/search', 'BlogFrontController@search');
-Route::get('articles', 'BlogFrontController@index');
-Route::get('blog/order', 'BlogController@indexOrder')->name('blog.order');
-Route::resource('blog', 'BlogController', ['except' => 'show']);
-Route::put('postseen/{id}', 'BlogAjaxController@updateSeen');
-Route::put('postactive/{id}', 'BlogAjaxController@updateActive');
-Route::get('blog/{blog}', 'BlogFrontController@show')->name('blog.show');
-
-// Comment
-Route::resource('comment', 'CommentController', [
-    'except' => ['create', 'show', 'update']
-]);
-Route::put('comment/{comment}', 'CommentAjaxController@update')->name('comment.update');
-Route::put('commentseen/{id}', 'CommentAjaxController@updateSeen');
-
-// Contact
-Route::resource('contact', 'ContactController', ['except' => ['show', 'edit']]);
 
 // Roles
 Route::get('roles', 'RoleController@edit');
@@ -143,3 +111,17 @@ Route::get('confirm/{token}', 'Auth\RegisterController@confirm');
 // Notifications
 Route::get('notifications/{user}', 'NotificationController@index');
 Route::put('notifications/{notification}', 'NotificationController@update');
+
+/*
+
+// Comment
+Route::resource('comment', 'CommentController', [
+    'except' => ['create', 'show', 'update']
+]);
+Route::put('comment/{comment}', 'CommentAjaxController@update')->name('comment.update');
+Route::put('commentseen/{id}', 'CommentAjaxController@updateSeen');
+
+// Contact
+Route::resource('contact', 'ContactController', ['except' => ['show', 'edit']]);
+
+*/

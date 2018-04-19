@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Trois',
+    'title' => 'Alfa',
     'sub-title' => 'An awesome PHP framework',
     'home' => 'Home',
     'contact' => 'Contact',

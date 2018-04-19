@@ -128,6 +128,38 @@
                                 </ul>
                             </li>
 
+                            <li {!! classActiveSegment(1, 'adm_beds') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#bedsmenu"><span class="fa fa-fw fa-pencil"></span> Кровати <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="bedsmenu" class="collapse">
+                                    <li><a href="{!! url('adm_beds') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_beds/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                                </ul>
+                            </li>
+
+                            <li {!! classActiveSegment(1, 'adm_mattress') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#mattressmenu"><span class="fa fa-fw fa-pencil"></span> Матрасы <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="mattressmenu" class="collapse">
+                                    <li><a href="{!! url('adm_mattress') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_mattress/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                                </ul>
+                            </li>
+
+                            <li {!! classActiveSegment(1, 'adm_curbstones') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#curbstonesmenu"><span class="fa fa-fw fa-pencil"></span> Тумбы <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="curbstonesmenu" class="collapse">
+                                    <li><a href="{!! url('adm_curbstones') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_curbstones/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                                </ul>
+                            </li>
+
+                            <li {!! classActiveSegment(1, 'adm_pouffes') !!}>
+                                <a href="#" data-toggle="collapse" data-target="#pouffesmenu"><span class="fa fa-fw fa-pencil"></span> Пуфы <span class="fa fa-fw fa-caret-down"></span></a>
+                                <ul id="pouffesmenu" class="collapse">
+                                    <li><a href="{!! url('adm_pouffes') !!}">{{ trans('back/admin.see-all') }}</a></li>
+                                    <li><a href="{!! url('adm_pouffes/create') !!}">{{ trans('back/admin.add') }}</a></li>
+                                </ul>
+                            </li>
+
                         @if(!empty($notifications))
                             <li><a href="{!! url('notifications/' . auth()->id()) !!}"><span class="fa fa-fw fa-bell-o"></span> Notifications</a></li>
                         @endif

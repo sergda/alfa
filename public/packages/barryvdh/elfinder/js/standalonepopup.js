@@ -14,13 +14,13 @@ $(document).on('click','.popup_selector',function (event) {
 });
 // function to update the file selected by elfinder
 function processSelectedFile(filePath, requestingField) {
-    if(requestingField == "en_slidexBox" || requestingField == "fr_slidexBox" || requestingField == "de_slidexBox"){
+    if(requestingField == "en_slidexBox"){
 
         var blockSlide = $('.' + requestingField).parents("div.sliderBlock");
         var description = $(blockSlide).find('.descriptionSlide').val();
 
         $('.' + requestingField).append(
-            "<div class='col-md-6 imgBlock'>"+
+            "<div class='col-md-3 imgBlock'>"+
             "<div class='deleteImageSlider'>&times;</div>"+
             "<div style='text-align: center;'>"+description+"</div>"+
             "<img src='/"+ filePath.replace("\\", "/") +"' alt='"+description+"' style='width: 150px; height: 150px;'/>"+

@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 use App\Models\Main;
 use App\Models\Design;
+use App\Models\Beds;
+use App\Models\Mattress;
+use App\Models\Curbstones;
+use App\Models\Pouffes;
 
 class HomeController extends Controller
 {
@@ -31,6 +35,21 @@ class HomeController extends Controller
 
     public function contatto() {
         return view('front.contatto.show');
+    }
+
+    public function collezione(Beds $beds, Mattress $mattress, Curbstones $curbstones, Pouffes $pouffes) {
+
+        //$beds_main = $beds->whereIs_main(true)->whereActive(true)->first();
+        $beds_count = $beds->whereActive(true)->count();
+        //$mattress_main = $mattress->whereIs_main(true)->whereActive(true)->first();
+        $mattress_count = $mattress->whereActive(true)->count();
+        //$curbstones_main = $curbstones->whereIs_main(true)->whereActive(true)->first();
+        $curbstones_count = $curbstones->whereActive(true)->count();
+        //$pouffes_main = $pouffes->whereIs_main(true)->whereActive(true)->first();
+        $pouffes_count = $pouffes->whereActive(true)->count();
+
+
+        return view('front.common_template.collesione', compact('beds_count', 'mattress_count', 'curbstones_count', 'pouffes_count'));
     }
 
     public function postSend(PostRequest $request) {

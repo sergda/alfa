@@ -9269,14 +9269,14 @@ footer, .fedback-button {
   position: relative;
 }
 .main-prod{
-
+  overflow: hidden;
 }
 .main-prod .col-lg-6, .main-prod .col-lg-3, .main-prod .col-lg-3, .main-prod .col-lg-4, .main-prod .col-lg-5, .main-prod .col-lg-12{
   margin: 0;
   padding: 0;
 }
 .fedback{
-  height: 118px;
+  height: 140px;
 }
 .fedback span{
   display: inline-block;
@@ -9488,4 +9488,135 @@ footer{
   border-radius: 0;
   color: #B5B7BC;
   margin-top: 10px;
+}
+.block-image{
+  height: 440px; width: 100%
+}
+.block-image-beds{
+  background-image: url(/img/no_photo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.block-image-mattress{
+  background-image: url(/img/no_photo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.block-image-curbstones{
+  background-image: url(/img/no_photo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.block-image-pouffes{
+  background-image: url(/img/no_photo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.block-text-beds{
+  background: #fff;
+}
+.block-text-beds:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: 10px;
+  top: 50px;
+}
+.block-text-mattress{
+  background: #091634;
+}
+.block-text-mattress:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #091634;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  right: -10px;
+  top: 50px;
+}
+.block-text-mattress .catalog-head, .block-text-mattress .catalog-text, .block-text-mattress .catalog-link a, .block-text-curbstones .catalog-head1, .block-text-curbstones .catalog-head, .block-text-curbstones .catalog-text, .block-text-curbstones .catalog-link a, .block-text-curbstones .catalog-head1{
+  color: #fff;
+}
+.block-text-mattress .catalog-head, .block-text-curbstones .catalog-head{
+  font-size: 70px;
+  padding-top: 30px;
+}
+.block-text-mattress .catalog-link a, .block-text-curbstones .catalog-link a{
+  border: 1px solid #fff;
+}
+
+.block-text-pouffes .catalog-head, .block-text-pouffes .catalog-text, .block-text-pouffes .catalog-link a{
+  color: #091634;
+}
+.block-text-pouffes .catalog-head{
+  font-size: 45px;
+  padding-top: 30px;
+}
+.block-text-pouffes .catalog-link a{
+  border: 1px solid #091634;
+}
+
+
+
+.block-text-curbstones{
+  background: #091634;
+}
+.block-text-curbstones:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #091634;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  right: -10px;
+  top: 50px;
+}
+.block-text-pouffes{
+  background: #BFCFDB;
+}
+.block-text-pouffes:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-right: 10px solid #BFCFDB;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  left: -10px;
+  top: 50px;
+}
+.catalog-head{
+  font-size: 100px;
+  color: #000;
+  text-align: left;
+  padding-left: 30px;
+}
+.catalog-head1{
+  font-size: 49px;
+  text-align: left;
+  padding-left: 30px;
+  color: #fff;
+}
+.catalog-text{
+  font-size: 19px;
+  text-align: left;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+.catalog-link{
+  text-align: left;
+  padding-left: 30px;
+}
+.catalog-link a{
+  border: 1px solid #D2BA7A;
+  border-radius: 0;
+  color: #6B6B6B;
+  margin-top: 95px;
 }

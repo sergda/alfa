@@ -4,23 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
-use App\Repositories\BedsRepository;
+use App\Repositories\MattressRepository;
 use Intervention\Image;
 
-class BedsController extends Controller
+class MattressController extends Controller
 {
-    protected $bedsRepository;
+    protected $mattressRepository;
 
-    public function __construct(BedsRepository $bedsRepository)
+    public function __construct(MattressRepository $mattressRepository)
     {
-        $this->bedsRepository = $bedsRepository;
+        $this->mattressRepository = $mattressRepository;
         $this->middleware('redac');
     }
 
     public function index()
     {
-        return redirect(route('beds.order', [
-            'name' => 'beds.created_at',
+        return redirect(route('mattress.order', [
+            'name' => 'mattress.created_at',
             'sens' => 'asc',
         ]));
     }
@@ -29,7 +29,7 @@ class BedsController extends Controller
     {
         $statut = session('statut');
 
-        $items = $this->bedsRepository->getPostsWithOrder(
+        $items = $this->mattressRepository->getPostsWithOrder(
             config('app.nbrPages.back.all'),
             $statut == 'admin' ? null : $request->user()->id,
             $request->name,
@@ -43,7 +43,7 @@ class BedsController extends Controller
 
         if ($request->ajax()) {
             return [
-                'view' => view('back.beds.table', compact('statut', 'items'))->render(),
+                'view' => view('back.mattress.table', compact('statut', 'items'))->render(),
                 'links' => e($links->setPath('order')->links()),
             ];
         }
@@ -54,49 +54,49 @@ class BedsController extends Controller
         $order->name = $request->name;
         $order->sens = 'sort-' . $request->sens;
 
-        return view('back.beds.index', compact('items', 'links', 'order'));
+        return view('back.mattress.index', compact('items', 'links', 'order'));
     }
     
     public function create()
     {
-        return view('back.beds.create');
+        return view('back.mattress.create');
     }
 
     public function store(PostRequest $request)
     {
-        $this->bedsRepository->store($request->all(), $request->user()->id);
+        $this->mattressRepository->store($request->all(), $request->user()->id);
 
-        return redirect('adm_beds')->with('ok', trans('back/beds.stored'));
+        return redirect('adm_mattress')->with('ok', trans('back/mattress.stored'));
     }
 
     public function edit($id)
     {
-        $post = $this->bedsRepository->getByIdWith($id);
+        $post = $this->mattressRepository->getByIdWith($id);
 
         $this->authorize('change', $post);
 
-        return view('back.beds.edit', $this->bedsRepository->getPostWith($post));
+        return view('back.mattress.edit', $this->mattressRepository->getPostWith($post));
     }
 
     public function update(PostRequest $request, $id)
     {
-        $post = $this->bedsRepository->getById($id);
+        $post = $this->mattressRepository->getById($id);
 
         $this->authorize('change', $post);
 
-        $this->bedsRepository->update($request->all(), $post);
+        $this->mattressRepository->update($request->all(), $post);
 
-        return redirect('adm_beds')->with('ok', trans('back/beds.updated'));
+        return redirect('adm_mattress')->with('ok', trans('back/mattress.updated'));
     }
     
     public function destroy($id)
     {
-        $post = $this->bedsRepository->getById($id);
+        $post = $this->mattressRepository->getById($id);
 
         $this->authorize('change', $post);
 
-        $this->bedsRepository->destroy($post);
+        $this->mattressRepository->destroy($post);
 
-        return redirect('adm_beds')->with('ok', trans('back/beds.destroyed'));
+        return redirect('adm_mattress')->with('ok', trans('back/mattress.destroyed'));
     }
 }

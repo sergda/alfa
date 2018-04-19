@@ -23,7 +23,7 @@
 
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="dropdown" {!! classActivePath('/collezione') !!}>
+                                <li class="dropdown" {!! classActivePath('collezione') !!}>
                                     {!! link_to('/collezione', 'COLLEZIONE', "title='collezione'" ) !!}
                                     <ul class="dropdown-menu">
                                             <li>
@@ -35,7 +35,7 @@
                                     </ul>
                                 </li>
 
-                                <li {!! classActivePath('/storia') !!}>
+                                <li {!! classActivePath('storia') !!}>
                                     {!! link_to('/storia', 'STORIA', "title='storia'" ) !!}
                                 </li>
 
@@ -58,12 +58,13 @@
 
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li {!! classActivePath('/contato') !!}>
-                                    {!! link_to('/contato', 'CONTATO', "title='contato'" ) !!}
+                                <li {!! classActivePath('contatto') !!}>
+                                    {!! link_to('/contatto', 'CONTATTO', "title='contatto'" ) !!}
                                 </li>
 
-                                <li {!! classActivePath('/societa') !!}>
-                                    {!! link_to('/societa', 'SOSIETA', "title='societa'" ) !!}
+                                <li {!! classActivePath('societa') !!}>
+                                    <a onclick="javascript:void(0)" href="#" title="SOSIETA"> SOSIETA </a>
+                                    {{-- !! link_to('/societa', 'SOSIETA', "title='societa'" ) !! --}}
                                 </li>
 
 

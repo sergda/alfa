@@ -29,6 +29,10 @@ class HomeController extends Controller
         return view('front.index', compact('main_page_slider', 'main_page_design'));
     }
 
+    public function contatto() {
+        return view('front.contatto.show');
+    }
+
     public function postSend(PostRequest $request) {
 
         $errors = [];

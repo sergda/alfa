@@ -61,5 +61,8 @@ return [
     'fr_image' => 'Image France',
     'de_image' => 'Image Deutsche',
     'testblocks' => 'Edit page',
-    'table' => 'page'
+    'table' => 'page',
+    'preview_text' => 'Preview text',
+    'detail_text' => 'Detail text',
+    'property' => 'Property',
 ];

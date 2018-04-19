@@ -2,53 +2,37 @@
 
 namespace App\Repositories;
 
-use App\Models\Worldtc;
-use App\Models\ImagesProject;
+use App\Models\Pouffes;
 
-class WorldTcRepository extends BaseRepository
+class PouffesRepository extends BaseRepository
 {
-    protected $comment;
-    
-    protected $imagesProject;
-
-    public function __construct(Worldtc $post, ImagesProject $imagesProject)
+    public function __construct(Pouffes $post)
     {
         $this->model = $post;
-        $this->imagesProject = $imagesProject;
     }
 
     protected function savePost($post, $inputs, $user_id = null)
     {
-        $post->en_title = $inputs['en_title'];
-        $post->fr_title = $inputs['fr_title'];
-        $post->de_title = $inputs['de_title'];
-        $post->en_description = $inputs['en_description'];
-        $post->fr_description = $inputs['fr_description'];
-        $post->de_description = $inputs['de_description'];
-        $post->en_keywords = $inputs['en_keywords'];
-        $post->fr_keywords = $inputs['fr_keywords'];
-        $post->de_keywords = $inputs['de_keywords'];
-        $post->en_content = $inputs['en_content'];
-        $post->en_content_bottom = $inputs['en_content_bottom'];
-        $post->fr_content = $inputs['fr_content'];
-        $post->fr_content_bottom = $inputs['fr_content_bottom'];
-        $post->de_content = $inputs['de_content'];
-        $post->de_content_bottom = $inputs['de_content_bottom'];
+        $post->title = $inputs['title'];
+        $post->description = $inputs['description'];
+        $post->keywords = $inputs['keywords'];
+        $post->preview_text = $inputs['preview_text'];
+        $post->detail_text = $inputs['detail_text'];
+        $post->property = $inputs['property'];
+        $post->image_passport = $inputs['image_passport'];
+        $post->image_passport_description = $inputs['image_passport_description'];
+        $post->image_list = $inputs['image_list'];
+        $post->image_list_description = $inputs['image_list_description'];
+        $post->image_passport_left = $inputs['image_passport_left'];
+        $post->image_passport_left_description = $inputs['image_passport_left_description'];
+        $post->image_passport_right = $inputs['image_passport_right'];
+        $post->image_passport_right_description = $inputs['image_passport_right_description'];
 
-        $post->en_image_input = $inputs['en_image_input'];
-        $post->en_image_description = $inputs['en_image_description'];
-        $post->fr_image_input = $inputs['fr_image_input'];
-        $post->fr_image_description = $inputs['fr_image_description'];
-        $post->de_image_input = $inputs['de_image_input'];
-        $post->de_image_description = $inputs['de_image_description'];
-
-        $post->en_slide_input = $inputs['en_slide_input'];
-        $post->fr_slide_input = $inputs['fr_slide_input'];
-        $post->de_slide_input = $inputs['de_slide_input'];
+        $post->slider_input = $inputs['slider_input'];
 
         $post->sort = $inputs['sort'];
-
         $post->slug = $inputs['slug'];
+        $post->is_main = isset($inputs['is_main']);
         $post->active = isset($inputs['active']);
         $post->is_menu = isset($inputs['is_menu']);
         if ($user_id) {
@@ -74,9 +58,10 @@ class WorldTcRepository extends BaseRepository
 
     public function getPostsWithOrder($n, $user_id = null, $orderby = 'created_at', $direction = 'desc')
     {
+        $table = $this->model->getTable();
         $query = $this->model
-            ->select('worldtcs.id', 'worldtcs.created_at', 'sort', 'en_title', 'fr_title', 'de_title', 'worldtcs.seen', 'active', 'is_menu', 'user_id', 'slug', 'username')
-            ->join('users', 'users.id', '=', 'worldtcs.user_id')
+            ->select($table.'.id', $table.'.created_at', 'sort', 'title', 'active', 'is_main', 'user_id', 'slug', 'username')
+            ->join('users', 'users.id', '=', $table.'.user_id')
             ->orderBy($orderby, $direction);
 
         if ($user_id) {
@@ -125,15 +110,6 @@ class WorldTcRepository extends BaseRepository
         $this->savePost($post, $inputs);
     }
 
-    public function updateSeen($inputs, $id)
-    {
-        $post = $this->getById($id);
-
-        $post->seen = $inputs['seen'] == 'true';
-
-        $post->save();
-    }
-
     public function updateActive($inputs, $id)
     {
         $post = $this->getById($id);
@@ -152,6 +128,15 @@ class WorldTcRepository extends BaseRepository
         $post->save();
     }
 
+    public function updateIsMain($inputs, $id)
+    {
+        $post = $this->getById($id);
+
+        $post->is_main = $inputs['is_main'] == 'true';
+
+        $post->save();
+    }
+
     public function store($inputs, $user_id)
     {
         $this->savePost(new $this->model, $inputs, $user_id);
@@ -160,10 +145,5 @@ class WorldTcRepository extends BaseRepository
     public function destroy($post)
     {
         $post->delete();
-    }
-
-    public function getSlug($comment_id)
-    {
-        return $this->comment->findOrFail($comment_id)->post->slug;
     }
 }

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repositories\BedsRepository;
+use App\Repositories\CurbstonesRepository;
 
-class BedsAjaxController extends Controller
+class CurbstonesAjaxController extends Controller
 {
     
-    protected $bedsRepository;
+    protected $repository;
     
-    public function __construct(BedsRepository $bedsRepository)
+    public function __construct(CurbstonesRepository $repository)
     {
-        $this->bedsRepository = $bedsRepository;
+        $this->repository = $repository;
 
         $this->middleware('admin')->only('update');
         $this->middleware('admin')->only('updateActive');
@@ -23,25 +23,25 @@ class BedsAjaxController extends Controller
 
     public function updateActive(Request $request, $id)
     {
-        $post = $this->bedsRepository->getById($id);
+        $post = $this->repository->getById($id);
 
         $this->authorize('change', $post);
         
-        $this->bedsRepository->updateActive($request->all(), $id);
+        $this->repository->updateActive($request->all(), $id);
 
         return response()->json();
     }
 
     public function updateIsMenu(Request $request, $id)
     {
-        $this->bedsRepository->updateIsMenu($request->all(), $id);
+        $this->repository->updateIsMenu($request->all(), $id);
 
         return response()->json();
     }
 
     public function updateIsMain(Request $request, $id)
     {
-        $this->bedsRepository->updateIsMain($request->all(), $id);
+        $this->repository->updateIsMain($request->all(), $id);
 
         return response()->json();
     }

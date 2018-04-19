@@ -2,7 +2,7 @@
 
 @section('main')
 
-  @include('back.partials.entete', ['title' => trans('back/all.dashboard') . link_to_route('worldtc.create', trans('back/all.add'), [], ['class' => 'btn btn-info pull-right']), 'icon' => 'pencil', 'fil' => trans('back/all.table')])
+  @include('back.partials.entete', ['title' => trans('back/all.dashboard') . link_to_route('adm_pouffes.create', trans('back/all.add'), [], ['class' => 'btn btn-info pull-right']), 'icon' => 'pencil', 'fil' => trans('back/all.table')])
 
     @if(session()->has('ok'))
         @include('partials/error', ['type' => 'success', 'message' => session('ok')])
@@ -18,53 +18,33 @@
         <thead>
           <tr>
               <th>
-                  title_en
+                  title
                   <a href="#" name="title" class="order">
-                      <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.en_title' ? $order->sens : 'unsorted'}}"></span>
-                  </a>
-              </th>
-              <th>
-                  title_fr
-                  <a href="#" name="title" class="order">
-                      <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.fr_title' ? $order->sens : 'unsorted'}}"></span>
-                  </a>
-              </th>
-              <th>
-                  title_de
-                  <a href="#" name="title" class="order">
-                      <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.de_title' ? $order->sens : 'unsorted'}}"></span>
+                      <span class="fa fa-fw fa-{{ $order->name == 'pouffes.title' ? $order->sens : 'unsorted'}}"></span>
                   </a>
               </th>
               <th>
                   Sort
                   <a href="#" name="sort" class="order">
-                      <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.sort' ? $order->sens : 'unsorted'}}"></span>
+                      <span class="fa fa-fw fa-{{ $order->name == 'pouffes.sort' ? $order->sens : 'unsorted'}}"></span>
                   </a>
               </th>
             <th>
               {{ trans('back/all.date') }}
               <a href="#" name="created_at" class="order">
-                <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.created_at' ? $order->sens : 'unsorted'}}"></span>
+                <span class="fa fa-fw fa-{{ $order->name == 'pouffes.created_at' ? $order->sens : 'unsorted'}}"></span>
               </a>
             </th>
             <th>
               {{ trans('back/all.published') }}
-              <a href="#" name="worldtcs.active" class="order">
-                <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.active' ? $order->sens : 'unsorted'}}"></span>
+              <a href="#" name="active" class="order">
+                <span class="fa fa-fw fa-{{ $order->name == 'pouffes.active' ? $order->sens : 'unsorted'}}"></span>
               </a>
-            </th> 
-            @if(session('statut') == 'admin')
+            </th>
               <th>
-                {{ trans('back/all.seen') }}
-                <a href="#" name="seen" class="order">
-                  <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.seen' ? $order->sens : 'unsorted'}}"></span>
-                </a>
-              </th>
-            @endif
-              <th>
-                  is_menu
-                  <a href="#" name="collections.is_menu" class="order">
-                      <span class="fa fa-fw fa-{{ $order->name == 'worldtcs.is_menu' ? $order->sens : 'unsorted'}}"></span>
+                  is_main
+                  <a href="#" name="is_main" class="order">
+                      <span class="fa fa-fw fa-{{ $order->name == 'pouffes.is_main' ? $order->sens : 'unsorted'}}"></span>
                   </a>
               </th>
             <th></th>
@@ -73,7 +53,7 @@
           </tr>
         </thead>
         <tbody>
-          @include('back.worldtc.table')
+          @include('back.pouffes.table')
         </tbody>
       </table>
     </div>
@@ -91,32 +71,11 @@
     
     $(function() {
 
-        // Seen gestion
-        $(document).on('change', ':checkbox[name="seen"]', function() {
-            $(this).parents('tr').toggleClass('warning');
-            $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
-            $.ajax({
-                url: '{{ url('worldtcspostseen') }}' + '/' + this.value,
-                type: 'PUT',
-                data: "seen=" + this.checked
-            })
-            .done(function() {
-                $('.fa-spin').remove();
-                $('input:checkbox[name="seen"]:hidden').show();
-            })
-            .fail(function() {
-                $('.fa-spin').remove();
-                chk = $('input:checkbox[name="seen"]:hidden');
-                chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
-                alert('{{ trans('back/all.fail') }}');
-            });
-        });
-
         // Active gestion
         $(document).on('change', ':checkbox[name="active"]', function() {
             $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
             $.ajax({
-                url: '{{ url('worldtcpostactive') }}' + '/' + this.value,
+                url: '{{ url('adm_pouffespostactive') }}' + '/' + this.value,
                 type: 'PUT',
                 data: "active=" + this.checked
             })
@@ -136,7 +95,7 @@
             $(this).parents('tr').toggleClass('warning');
             $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
             $.ajax({
-                url: '{{ url('worldtcpostis_menu') }}' + '/' + this.value,
+                url: '{{ url('adm_pouffespostis_menu') }}' + '/' + this.value,
                 type: 'PUT',
                 data: "is_menu=" + this.checked
             })
@@ -147,6 +106,26 @@
                     .fail(function() {
                         $('.fa-spin').remove();
                         chk = $('input:checkbox[name="is_menu"]:hidden');
+                        chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
+                        alert('{{ trans('back/all.fail') }}');
+                    });
+        });
+
+        $(document).on('change', ':checkbox[name="is_main"]', function() {
+            $(this).parents('tr').toggleClass('warning');
+            $(this).hide().parent().append('<i class="fa fa-refresh fa-spin"></i>');
+            $.ajax({
+                url: '{{ url('adm_pouffespostis_main') }}' + '/' + this.value,
+                type: 'PUT',
+                data: "is_main=" + this.checked
+            })
+                    .done(function() {
+                        $('.fa-spin').remove();
+                        $('input:checkbox[name="is_main"]:hidden').show();
+                    })
+                    .fail(function() {
+                        $('.fa-spin').remove();
+                        chk = $('input:checkbox[name="is_main"]:hidden');
                         chk.show().prop('checked', chk.is(':checked') ? null:'checked').parents('tr').toggleClass('warning');
                         alert('{{ trans('back/all.fail') }}');
                     });
@@ -176,10 +155,10 @@
             // Wait icon
             $('.breadcrumb li').append('<span id="tempo" class="fa fa-refresh fa-spin"></span>'); 
             // Send ajax      
-            $.get('{{ url('worldtc/order') }}', { name: name, sens: tri })
+            $.get('{{ url('adm_pouffes/order') }}', { name: name, sens: tri })
             .done(function(data) {
                 $('tbody').html(data.view);
-                $('.link').html(data.links.replace('worldtc.(.+)&sens', name));
+                $('.link').html(data.links.replace('curbstones.(.+)&sens', name));
                 $('#tempo').remove();
             })
             .fail(function() {

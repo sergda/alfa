@@ -4,12 +4,14 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use App\Models\Post;
-use App\Models\Testblock;
-use App\Models\Worldtc;
+use App\Models\Beds;
 use App\Models\Collection;
 use App\Models\Customerservice;
 use App\Models\Design;
+use App\Models\Main;
+use App\Models\Mattress;
+use App\Models\Curbstones;
+use App\Models\Pouffes;
 use App\Policies\PostPolicy;
 
 class AuthServiceProvider extends ServiceProvider
@@ -20,12 +22,14 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Post::class => PostPolicy::class,
-        Testblock::class => PostPolicy::class,
-        Worldtc::class => PostPolicy::class,
+        Beds::class => PostPolicy::class,
         Collection::class => PostPolicy::class,
         Customerservice::class => PostPolicy::class,
+        Main::class => PostPolicy::class,
         Design::class => PostPolicy::class,
+        Mattress::class => PostPolicy::class,
+        Curbstones::class => PostPolicy::class,
+        Pouffes::class => PostPolicy::class,
     ];
 
     /**

@@ -1,28 +1,36 @@
-App\Models\Beds Object
+Illuminate\Pagination\LengthAwarePaginator Object
 (
-    [table:protected] => beds
-    [connection:protected] => 
-    [primaryKey:protected] => id
-    [keyType:protected] => int
-    [perPage:protected] => 15
-    [incrementing] => 1
-    [timestamps] => 1
-    [attributes:protected] => Array
+    [total:protected] => 1
+    [lastPage:protected] => 1
+    [items:protected] => Illuminate\Database\Eloquent\Collection Object
         (
-            [id] => 1
-            [created_at] => 2018-04-19 09:52:46
-            [updated_at] => 2018-04-19 10:53:41
-            [title] => alfa 1
-            [description] => alfa 1
-            [keywords] => alfa 1
-            [slug] => alfa-1
-            [preview_text] => <p>Preview text</p>
+            [items:protected] => Array
+                (
+                    [0] => App\Models\Beds Object
+                        (
+                            [table:protected] => beds
+                            [connection:protected] => 
+                            [primaryKey:protected] => id
+                            [keyType:protected] => int
+                            [perPage:protected] => 15
+                            [incrementing] => 1
+                            [timestamps] => 1
+                            [attributes:protected] => Array
+                                (
+                                    [id] => 1
+                                    [created_at] => 2018-04-19 09:52:46
+                                    [updated_at] => 2018-04-19 12:32:44
+                                    [title] => alfa 1
+                                    [description] => alfa 1
+                                    [keywords] => alfa 1
+                                    [slug] => alfa-1
+                                    [preview_text] => <p>Preview text</p>
 
-            [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+                                    [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
 
 <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
 
-            [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+                                    [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
 	<tbody>
 		<tr>
 			<td>Property</td>
@@ -41,39 +49,38 @@ App\Models\Beds Object
 
 <p>&nbsp;</p>
 
-            [is_main] => 1
-            [image_passport] => /files/beds\almo1478_khaki (1).jpg
-            [image_passport_description] => Description image pasport
-            [image_list] => /files/beds\almo1487_khaki.jpg
-            [image_list_description] => Description image list
-            [image_passport_left] => /files/beds\almo1491_khaki.jpg
-            [image_passport_left_description] => Description image pasport left
-            [image_passport_right] => /files/beds\almo1524_khaki.jpg
-            [image_passport_right_description] => Description image pasport right
-            [slider_input] => %5B%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1487_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1491_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1509_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1517_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1518_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1491_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%5D
-            [sort] => 10
-            [active] => 1
-            [is_menu] => 0
-            [user_id] => 1
-            [count] => 1
-        )
+                                    [is_main] => 1
+                                    [image_passport] => /files/beds\almo1478_khaki_1.jpg
+                                    [image_passport_description] => Description image pasport
+                                    [image_list] => /files/beds\almo1487_khaki.jpg
+                                    [image_list_description] => Description image list
+                                    [image_passport_left] => /files/beds\almo1491_khaki.jpg
+                                    [image_passport_left_description] => Description image pasport left
+                                    [image_passport_right] => /files/beds\almo1524_khaki.jpg
+                                    [image_passport_right_description] => Description image pasport right
+                                    [slider_input] => 
+                                    [sort] => 10
+                                    [active] => 1
+                                    [is_menu] => 0
+                                    [user_id] => 1
+                                )
 
-    [original:protected] => Array
-        (
-            [id] => 1
-            [created_at] => 2018-04-19 09:52:46
-            [updated_at] => 2018-04-19 10:53:41
-            [title] => alfa 1
-            [description] => alfa 1
-            [keywords] => alfa 1
-            [slug] => alfa-1
-            [preview_text] => <p>Preview text</p>
+                            [original:protected] => Array
+                                (
+                                    [id] => 1
+                                    [created_at] => 2018-04-19 09:52:46
+                                    [updated_at] => 2018-04-19 12:32:44
+                                    [title] => alfa 1
+                                    [description] => alfa 1
+                                    [keywords] => alfa 1
+                                    [slug] => alfa-1
+                                    [preview_text] => <p>Preview text</p>
 
-            [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+                                    [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
 
 <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
 
-            [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+                                    [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
 	<tbody>
 		<tr>
 			<td>Property</td>
@@ -92,80 +99,452 @@ App\Models\Beds Object
 
 <p>&nbsp;</p>
 
-            [is_main] => 1
-            [image_passport] => /files/beds\almo1478_khaki (1).jpg
-            [image_passport_description] => Description image pasport
-            [image_list] => /files/beds\almo1487_khaki.jpg
-            [image_list_description] => Description image list
-            [image_passport_left] => /files/beds\almo1491_khaki.jpg
-            [image_passport_left_description] => Description image pasport left
-            [image_passport_right] => /files/beds\almo1524_khaki.jpg
-            [image_passport_right_description] => Description image pasport right
-            [slider_input] => %5B%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1487_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1491_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1509_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1517_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1518_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%2C%7B%22src%22%3A%22%2Ffiles%2Fbeds%5C%5Calmo1491_khaki.jpg%22%2C%22alt%22%3A%22%22%7D%5D
-            [sort] => 10
-            [active] => 1
-            [is_menu] => 0
-            [user_id] => 1
+                                    [is_main] => 1
+                                    [image_passport] => /files/beds\almo1478_khaki_1.jpg
+                                    [image_passport_description] => Description image pasport
+                                    [image_list] => /files/beds\almo1487_khaki.jpg
+                                    [image_list_description] => Description image list
+                                    [image_passport_left] => /files/beds\almo1491_khaki.jpg
+                                    [image_passport_left_description] => Description image pasport left
+                                    [image_passport_right] => /files/beds\almo1524_khaki.jpg
+                                    [image_passport_right_description] => Description image pasport right
+                                    [slider_input] => 
+                                    [sort] => 10
+                                    [active] => 1
+                                    [is_menu] => 0
+                                    [user_id] => 1
+                                )
+
+                            [relations:protected] => Array
+                                (
+                                    [user] => App\Models\User Object
+                                        (
+                                            [hidden:protected] => Array
+                                                (
+                                                    [0] => password
+                                                    [1] => remember_token
+                                                )
+
+                                            [connection:protected] => 
+                                            [table:protected] => 
+                                            [primaryKey:protected] => id
+                                            [keyType:protected] => int
+                                            [perPage:protected] => 15
+                                            [incrementing] => 1
+                                            [timestamps] => 1
+                                            [attributes:protected] => Array
+                                                (
+                                                    [id] => 1
+                                                    [username] => GreatAdmin
+                                                    [email] => sergda@silversite.ru
+                                                    [password] => $2y$10$IbnMe.eDWoR/Y79D3y13Q.uYtiJhUnicUD9oyiCfU7ict0gHltt0y
+                                                    [role_id] => 1
+                                                    [seen] => 1
+                                                    [valid] => 1
+                                                    [confirmed] => 1
+                                                    [confirmation_code] => 
+                                                    [created_at] => 
+                                                    [updated_at] => 
+                                                    [remember_token] => 
+                                                )
+
+                                            [original:protected] => Array
+                                                (
+                                                    [id] => 1
+                                                    [username] => GreatAdmin
+                                                    [email] => sergda@silversite.ru
+                                                    [password] => $2y$10$IbnMe.eDWoR/Y79D3y13Q.uYtiJhUnicUD9oyiCfU7ict0gHltt0y
+                                                    [role_id] => 1
+                                                    [seen] => 1
+                                                    [valid] => 1
+                                                    [confirmed] => 1
+                                                    [confirmation_code] => 
+                                                    [created_at] => 
+                                                    [updated_at] => 
+                                                    [remember_token] => 
+                                                )
+
+                                            [relations:protected] => Array
+                                                (
+                                                )
+
+                                            [visible:protected] => Array
+                                                (
+                                                )
+
+                                            [appends:protected] => Array
+                                                (
+                                                )
+
+                                            [fillable:protected] => Array
+                                                (
+                                                )
+
+                                            [guarded:protected] => Array
+                                                (
+                                                    [0] => *
+                                                )
+
+                                            [dates:protected] => Array
+                                                (
+                                                )
+
+                                            [dateFormat:protected] => 
+                                            [casts:protected] => Array
+                                                (
+                                                )
+
+                                            [touches:protected] => Array
+                                                (
+                                                )
+
+                                            [observables:protected] => Array
+                                                (
+                                                )
+
+                                            [with:protected] => Array
+                                                (
+                                                )
+
+                                            [exists] => 1
+                                            [wasRecentlyCreated] => 
+                                            [rememberTokenName:protected] => remember_token
+                                        )
+
+                                )
+
+                            [hidden:protected] => Array
+                                (
+                                )
+
+                            [visible:protected] => Array
+                                (
+                                )
+
+                            [appends:protected] => Array
+                                (
+                                )
+
+                            [fillable:protected] => Array
+                                (
+                                )
+
+                            [guarded:protected] => Array
+                                (
+                                    [0] => *
+                                )
+
+                            [dates:protected] => Array
+                                (
+                                )
+
+                            [dateFormat:protected] => 
+                            [casts:protected] => Array
+                                (
+                                )
+
+                            [touches:protected] => Array
+                                (
+                                )
+
+                            [observables:protected] => Array
+                                (
+                                )
+
+                            [with:protected] => Array
+                                (
+                                )
+
+                            [exists] => 1
+                            [wasRecentlyCreated] => 
+                        )
+
+                )
+
         )
 
-    [relations:protected] => Array
+    [perPage:protected] => 1000000000
+    [currentPage:protected] => 1
+    [path:protected] => http://alfa/beds
+    [query:protected] => Array
         (
         )
 
-    [hidden:protected] => Array
-        (
-        )
-
-    [visible:protected] => Array
-        (
-        )
-
-    [appends:protected] => Array
-        (
-        )
-
-    [fillable:protected] => Array
-        (
-        )
-
-    [guarded:protected] => Array
-        (
-            [0] => *
-        )
-
-    [dates:protected] => Array
-        (
-        )
-
-    [dateFormat:protected] => 
-    [casts:protected] => Array
-        (
-        )
-
-    [touches:protected] => Array
-        (
-        )
-
-    [observables:protected] => Array
-        (
-        )
-
-    [with:protected] => Array
-        (
-        )
-
-    [exists] => 1
-    [wasRecentlyCreated] => 
+    [fragment:protected] => 
+    [pageName:protected] => page
 )
-Array
+Illuminate\Pagination\LengthAwarePaginator Object
 (
-    [count] => 0
-)
-Array
-(
-    [count] => 0
-)
-Array
-(
-    [count] => 0
+    [total:protected] => 1
+    [lastPage:protected] => 1
+    [items:protected] => Illuminate\Database\Eloquent\Collection Object
+        (
+            [items:protected] => Array
+                (
+                    [0] => App\Models\Beds Object
+                        (
+                            [table:protected] => beds
+                            [connection:protected] => 
+                            [primaryKey:protected] => id
+                            [keyType:protected] => int
+                            [perPage:protected] => 15
+                            [incrementing] => 1
+                            [timestamps] => 1
+                            [attributes:protected] => Array
+                                (
+                                    [id] => 1
+                                    [created_at] => 2018-04-19 09:52:46
+                                    [updated_at] => 2018-04-19 12:32:44
+                                    [title] => alfa 1
+                                    [description] => alfa 1
+                                    [keywords] => alfa 1
+                                    [slug] => alfa-1
+                                    [preview_text] => <p>Preview text</p>
+
+                                    [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+
+<p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+
+                                    [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+	<tbody>
+		<tr>
+			<td>Property</td>
+			<td>54564</td>
+		</tr>
+		<tr>
+			<td>Property</td>
+			<td>25145</td>
+		</tr>
+		<tr>
+			<td>Property</td>
+			<td>5489</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+                                    [is_main] => 1
+                                    [image_passport] => /files/beds\almo1478_khaki_1.jpg
+                                    [image_passport_description] => Description image pasport
+                                    [image_list] => /files/beds\almo1487_khaki.jpg
+                                    [image_list_description] => Description image list
+                                    [image_passport_left] => /files/beds\almo1491_khaki.jpg
+                                    [image_passport_left_description] => Description image pasport left
+                                    [image_passport_right] => /files/beds\almo1524_khaki.jpg
+                                    [image_passport_right_description] => Description image pasport right
+                                    [slider_input] => 
+                                    [sort] => 10
+                                    [active] => 1
+                                    [is_menu] => 0
+                                    [user_id] => 1
+                                )
+
+                            [original:protected] => Array
+                                (
+                                    [id] => 1
+                                    [created_at] => 2018-04-19 09:52:46
+                                    [updated_at] => 2018-04-19 12:32:44
+                                    [title] => alfa 1
+                                    [description] => alfa 1
+                                    [keywords] => alfa 1
+                                    [slug] => alfa-1
+                                    [preview_text] => <p>Preview text</p>
+
+                                    [detail_text] => <p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+
+<p>Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text&nbsp;Detail text</p>
+
+                                    [property] => <table border="1" cellpadding="1" cellspacing="1" style="width: 100%;">
+	<tbody>
+		<tr>
+			<td>Property</td>
+			<td>54564</td>
+		</tr>
+		<tr>
+			<td>Property</td>
+			<td>25145</td>
+		</tr>
+		<tr>
+			<td>Property</td>
+			<td>5489</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+                                    [is_main] => 1
+                                    [image_passport] => /files/beds\almo1478_khaki_1.jpg
+                                    [image_passport_description] => Description image pasport
+                                    [image_list] => /files/beds\almo1487_khaki.jpg
+                                    [image_list_description] => Description image list
+                                    [image_passport_left] => /files/beds\almo1491_khaki.jpg
+                                    [image_passport_left_description] => Description image pasport left
+                                    [image_passport_right] => /files/beds\almo1524_khaki.jpg
+                                    [image_passport_right_description] => Description image pasport right
+                                    [slider_input] => 
+                                    [sort] => 10
+                                    [active] => 1
+                                    [is_menu] => 0
+                                    [user_id] => 1
+                                )
+
+                            [relations:protected] => Array
+                                (
+                                    [user] => App\Models\User Object
+                                        (
+                                            [hidden:protected] => Array
+                                                (
+                                                    [0] => password
+                                                    [1] => remember_token
+                                                )
+
+                                            [connection:protected] => 
+                                            [table:protected] => 
+                                            [primaryKey:protected] => id
+                                            [keyType:protected] => int
+                                            [perPage:protected] => 15
+                                            [incrementing] => 1
+                                            [timestamps] => 1
+                                            [attributes:protected] => Array
+                                                (
+                                                    [id] => 1
+                                                    [username] => GreatAdmin
+                                                    [email] => sergda@silversite.ru
+                                                    [password] => $2y$10$IbnMe.eDWoR/Y79D3y13Q.uYtiJhUnicUD9oyiCfU7ict0gHltt0y
+                                                    [role_id] => 1
+                                                    [seen] => 1
+                                                    [valid] => 1
+                                                    [confirmed] => 1
+                                                    [confirmation_code] => 
+                                                    [created_at] => 
+                                                    [updated_at] => 
+                                                    [remember_token] => 
+                                                )
+
+                                            [original:protected] => Array
+                                                (
+                                                    [id] => 1
+                                                    [username] => GreatAdmin
+                                                    [email] => sergda@silversite.ru
+                                                    [password] => $2y$10$IbnMe.eDWoR/Y79D3y13Q.uYtiJhUnicUD9oyiCfU7ict0gHltt0y
+                                                    [role_id] => 1
+                                                    [seen] => 1
+                                                    [valid] => 1
+                                                    [confirmed] => 1
+                                                    [confirmation_code] => 
+                                                    [created_at] => 
+                                                    [updated_at] => 
+                                                    [remember_token] => 
+                                                )
+
+                                            [relations:protected] => Array
+                                                (
+                                                )
+
+                                            [visible:protected] => Array
+                                                (
+                                                )
+
+                                            [appends:protected] => Array
+                                                (
+                                                )
+
+                                            [fillable:protected] => Array
+                                                (
+                                                )
+
+                                            [guarded:protected] => Array
+                                                (
+                                                    [0] => *
+                                                )
+
+                                            [dates:protected] => Array
+                                                (
+                                                )
+
+                                            [dateFormat:protected] => 
+                                            [casts:protected] => Array
+                                                (
+                                                )
+
+                                            [touches:protected] => Array
+                                                (
+                                                )
+
+                                            [observables:protected] => Array
+                                                (
+                                                )
+
+                                            [with:protected] => Array
+                                                (
+                                                )
+
+                                            [exists] => 1
+                                            [wasRecentlyCreated] => 
+                                            [rememberTokenName:protected] => remember_token
+                                        )
+
+                                )
+
+                            [hidden:protected] => Array
+                                (
+                                )
+
+                            [visible:protected] => Array
+                                (
+                                )
+
+                            [appends:protected] => Array
+                                (
+                                )
+
+                            [fillable:protected] => Array
+                                (
+                                )
+
+                            [guarded:protected] => Array
+                                (
+                                    [0] => *
+                                )
+
+                            [dates:protected] => Array
+                                (
+                                )
+
+                            [dateFormat:protected] => 
+                            [casts:protected] => Array
+                                (
+                                )
+
+                            [touches:protected] => Array
+                                (
+                                )
+
+                            [observables:protected] => Array
+                                (
+                                )
+
+                            [with:protected] => Array
+                                (
+                                )
+
+                            [exists] => 1
+                            [wasRecentlyCreated] => 
+                        )
+
+                )
+
+        )
+
+    [perPage:protected] => 1000000000
+    [currentPage:protected] => 1
+    [path:protected] => http://alfa/beds
+    [query:protected] => Array
+        (
+        )
+
+    [fragment:protected] => 
+    [pageName:protected] => page
 )

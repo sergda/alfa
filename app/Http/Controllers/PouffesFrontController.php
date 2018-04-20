@@ -19,9 +19,14 @@ class PouffesFrontController extends Controller
 
     public function index()
     {
-        $items = $this->repository->getActiveWithUserOrderByDate($this->nbrPages);
+        $items = $this->repository->getActiveWithUserOrderByDate(100000000000);
 
-        return view('front.common_template.index', compact('items'));
+        $title = 'Pouffes';
+        $description = 'Pouffes';
+        $keywords = 'Pouffes';
+        $table = 'pouffes';
+
+        return view('front.common_template.index', compact('items','title','description','keywords','table'));
     }
 
     public function show(Request $request, $slug)

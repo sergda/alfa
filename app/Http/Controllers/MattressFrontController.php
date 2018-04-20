@@ -19,9 +19,14 @@ class MattressFrontController extends Controller
 
     public function index()
     {
-        $items = $this->mattressRepository->getActiveWithUserOrderByDate($this->nbrPages);
+        $items = $this->mattressRepository->getActiveWithUserOrderByDate(1000000000);
 
-        return view('front.common_template.index', compact('items'));
+        $title = 'Mattress';
+        $description = 'Mattress';
+        $keywords = 'Mattress';
+        $table = 'mattress';
+
+        return view('front.common_template.index', compact('items','title','description','keywords','table'));
     }
 
     public function show(Request $request, $slug)

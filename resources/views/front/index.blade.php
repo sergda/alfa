@@ -49,29 +49,29 @@
     <section class="text-center main-prod">
         <div class="row">
             <div class="col-lg-6">
-                <div style="background: #091634; height: 440px; width: 100%">11</div>
+                <div onclick="location.href='/beds'" class="main-text-beds"></div>
             </div>
             <div class="col-lg-3">
-                <div style="background: #A0958C; height: 440px; width: 100%">22</div>
+                <div class="main-image-beds"></div>
             </div>
             <div class="col-lg-3">
-                <div style="background: #EDEDED; height: 440px; width: 100%">33</div>
+                <div onclick="location.href='/contatto'" class="main-contacts"></div>
             </div>
         </div>
     </section>
     <section class="text-center main-prod">
         <div class="row">
             <div class="col-lg-3">
-                <div style="background: #CAC9D0; height: 440px; width: 100%">11</div>
+                <div class="main-mattress"></div>
             </div>
             <div class="col-lg-3">
-                <div style="background: #EDEDED; height: 440px; width: 100%">11</div>
+                <div onclick="location.href='/mattress'" class="main-mattress-text"></div>
             </div>
             <div class="col-lg-3">
-                <div style="background: #BECBDE; height: 440px; width: 100%">22</div>
+                <div class="main-vir"></div>
             </div>
             <div class="col-lg-3">
-                <div style="background: #0C182D; height: 440px; width: 100%">33</div>
+                <div class="main-city"></div>
             </div>
         </div>
     </section>
@@ -114,7 +114,7 @@
     @if( isset($main_page_slider) )
         <section class="text-center main-prod">
 
-            <div class="design-head">SOCIET?</div>
+            <div class="design-head">SOCIETA</div>
             <div class="row">
                 @foreach($main_page_design as $itemKey=>$item)
                     <div class="col-lg-3">

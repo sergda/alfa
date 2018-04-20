@@ -60,7 +60,7 @@ class BedsRepository extends BaseRepository
     {
         $table = $this->model->getTable();
         $query = $this->model
-            ->select($table.'.id', $table.'.created_at', 'sort', 'title', 'active', 'is_main', 'user_id', 'slug', 'username')
+            ->select($table.'.id', $table.'.created_at', 'sort', 'title', 'active', 'is_menu', 'user_id', 'slug', 'username')
             ->join('users', 'users.id', '=', $table.'.user_id')
             ->orderBy($orderby, $direction);
 

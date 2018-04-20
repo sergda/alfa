@@ -27,10 +27,16 @@
                                     {!! link_to('/collezione', 'COLLEZIONE', "title='collezione'" ) !!}
                                     <ul class="dropdown-menu">
                                             <li>
-                                                {!! link_to('/link1', 'link1', "title='link1'" ) !!}
+                                                {!! link_to('/beds', 'beds', "title='beds'" ) !!}
                                             </li>
                                             <li>
-                                                {!! link_to('/link2', 'link2', "title='link2'" ) !!}
+                                                {!! link_to('/mattress', 'mattress', "title='mattress'" ) !!}
+                                            </li>
+                                            <li>
+                                                {!! link_to('#', 'curbstones', "title='curbstones'" ) !!}
+                                            </li>
+                                            <li>
+                                                {!! link_to('/pouffes', 'pouffes', "title='pouffes'" ) !!}
                                             </li>
                                     </ul>
                                 </li>

@@ -13,7 +13,7 @@
     <section class="text-center main-prod">
         <div class="row">
             <div class="col-lg-3">
-                <div class="block-image block-image-beds">11</div>
+                <div class="block-image block-image-beds"></div>
             </div>
             <div class="col-lg-3">
                 <div class="block-image block-text-beds">
@@ -53,7 +53,7 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="block-image block-image-mattress">33</div>
+                <div class="block-image block-image-mattress"></div>
             </div>
         </div>
 
@@ -78,10 +78,10 @@
                 </div>
             </div>
             <div class="col-lg-3">
-                <div class="block-image block-image-curbstones">11</div>
+                <div class="block-image block-image-curbstones"></div>
             </div>
             <div class="col-lg-3">
-                <div class="block-image block-image-pouffes">33</div>
+                <div class="block-image block-image-pouffes"></div>
             </div>
             <div class="col-lg-3">
                 <div class="block-image block-text-pouffes block-text-left">

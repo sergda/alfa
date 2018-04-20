@@ -5998,6 +5998,17 @@ li.imgflag a {
  */
 /* FONT PATH
  * -------------------------- */
+
+
+@font-face {
+  font-family: 'Romul';
+  src: url('../fonts/Romul.eot?#iefix') format('embedded-opentype'),  url('../fonts/Romul.otf')  format('opentype'),
+  url('../fonts/Romul.woff') format('woff'), url('../fonts/Romul.ttf')  format('truetype'), url('../fonts/Romul.svg#Romul') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.6.3");
@@ -9271,7 +9282,7 @@ footer, .fedback-button {
 .main-prod{
   overflow: hidden;
 }
-.main-prod .col-lg-6, .main-prod .col-lg-3, .main-prod .col-lg-3, .main-prod .col-lg-4, .main-prod .col-lg-5, .main-prod .col-lg-12{
+.main-prod .col-lg-2, .main-prod .col-lg-3, .main-prod .col-lg-4, .main-prod .col-lg-5, .main-prod .col-lg-6, .main-prod .col-lg-7, .main-prod .col-lg-8, .main-prod .col-lg-9, .main-prod .col-lg-10, .main-prod .col-lg-11, .main-prod .col-lg-12{
   margin: 0;
   padding: 0;
 }
@@ -9493,22 +9504,22 @@ footer{
   height: 440px; width: 100%
 }
 .block-image-beds{
-  background-image: url(/img/no_photo.png);
+  background-image: url(/img/beds.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 .block-image-mattress{
-  background-image: url(/img/no_photo.png);
+  background-image: url('/img/mattress.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
 .block-image-curbstones{
-  background-image: url(/img/no_photo.png);
+  background-image: url(/img/tumbi.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
 .block-image-pouffes{
-  background-image: url(/img/no_photo.png);
+  background-image: url(/img/alfabed_catalog_v1_001.png);
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -9519,12 +9530,13 @@ footer{
   content: '';
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-right: 10px solid #fff;
-  border-bottom: 10px solid transparent;
+  border-top: 20px solid transparent;
+  border-right: 18px solid #fff;
+  border-bottom: 20px solid transparent;
   position: absolute;
-  left: 10px;
-  top: 50px;
+  left: -17px;
+  top: 26px;
+  z-index: 1;
 }
 .block-text-mattress{
   background: #091634;
@@ -9533,12 +9545,13 @@ footer{
   content: '';
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-left: 10px solid #091634;
-  border-bottom: 10px solid transparent;
+  border-top: 20px solid transparent;
+  border-left: 18px solid #091634;
+  border-bottom: 20px solid transparent;
   position: absolute;
-  right: -10px;
-  top: 50px;
+  right: -17px;
+  top: 26px;
+  z-index: 1;
 }
 .block-text-mattress .catalog-head, .block-text-mattress .catalog-text, .block-text-mattress .catalog-link a, .block-text-curbstones .catalog-head1, .block-text-curbstones .catalog-head, .block-text-curbstones .catalog-text, .block-text-curbstones .catalog-link a, .block-text-curbstones .catalog-head1{
   color: #fff;
@@ -9565,18 +9578,19 @@ footer{
 
 
 .block-text-curbstones{
-  background: #091634;
+  background: url(/img/cassetti.png);
 }
 .block-text-curbstones:before{
   content: '';
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-left: 10px solid #091634;
-  border-bottom: 10px solid transparent;
+  border-top: 20px solid transparent;
+  border-left: 18px solid #091634;
+  border-bottom: 20px solid transparent;
   position: absolute;
-  right: -10px;
-  top: 50px;
+  right: -17px;
+  top: 26px;
+  z-index: 1;
 }
 .block-text-pouffes{
   background: #BFCFDB;
@@ -9585,12 +9599,13 @@ footer{
   content: '';
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-right: 10px solid #BFCFDB;
-  border-bottom: 10px solid transparent;
+  border-top: 20px solid transparent;
+  border-right: 18px solid #BFCFDB;
+  border-bottom: 20px solid transparent;
   position: absolute;
-  left: -10px;
-  top: 50px;
+  left: -17px;
+  top: 26px;
+  z-index: 1;
 }
 .catalog-head{
   font-size: 100px;
@@ -9619,4 +9634,116 @@ footer{
   border-radius: 0;
   color: #6B6B6B;
   margin-top: 95px;
+}
+.main-text-beds, .main-image-beds, .main-contacts, .main-mattress, .main-mattress-text, .main-vir, .main-city{
+  height: 440px;
+  width: 100%;
+}
+.main-text-beds{
+  cursor: pointer;
+  background: url('/img/main_text_beds.png');
+}
+.main-image-beds{
+  background: url('/img/main_beds.png');
+}
+.main-contacts{
+  cursor: pointer;
+  background: url('/img/main_contacts.png');
+}
+.main-mattress{
+  background: url('/img/main_mattress.png');
+}
+.main-mattress-text{
+  cursor: pointer;
+  background: url('/img/main_mattress_text.png');
+}
+.main-vir{
+  background: url('/img/main-vir.png');
+}
+.main-city{
+  background: url('/img/main-city.png');
+}
+.list-image img{
+  width: 100%;
+  max-height: 300px;
+}
+.catalog-list{
+  margin-bottom: 30px;
+}
+.catalog-lest-h1{
+  text-align: left;
+  font-size: 70px;
+  color: #003399;
+}
+.detail-block-head{
+  height: 600px;
+}
+.detail-block-head .detail-text{
+  background: #091634;
+  height: 600px;
+  overflow: hidden;
+  padding: 30px;
+  color: #fff;
+  text-align: left;
+}
+.detail-block-head .detail-text p{
+  color: #fff;
+}
+.detail-block-head .detail-text .name{
+  font-size: 60px;
+}
+.detail-block-head .detail-img{
+   height: 600px;
+ }
+.detail-block-head .detail-img img{
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.detail-block-img > div{
+  height: 440px;
+}
+.detail-block-img .img-left, .detail-block-img .img-right{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.more-photo .col-lg-6{
+  height: 146px;
+  position: relative;
+  border: 1px solid #fff;
+}
+.more-photo .col-lg-6 img{
+  width: 100%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.bg-r-right{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('/img/accesuare.png');
+  position: relative;
+}
+.bg-r-right:before{
+
+  content: '';
+  width: 0;
+  height: 0;
+  border-top: 220px solid transparent;
+  border-right: 30px solid #FFF;
+  border-bottom: 220px solid transparent;
+  position: absolute;
+  left: -30px;
+  top: 0px;
+  z-index: 1;
+
 }

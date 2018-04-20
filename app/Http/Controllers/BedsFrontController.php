@@ -20,9 +20,13 @@ class BedsFrontController extends Controller
 
     public function index()
     {
-        $items = $this->bedsRepository->getActiveWithUserOrderByDate($this->nbrPages);
+        $items = $this->bedsRepository->getActiveWithUserOrderByDate(1000000000);
+        $title = 'Beds';
+        $description = 'Beds';
+        $keywords = 'Beds';
+        $table = 'beds';
 
-        return view('front.common_template.index', compact('items'));
+        return view('front.common_template.index', compact('items','title','description','keywords','table'));
     }
 
     public function show(Request $request, $slug)

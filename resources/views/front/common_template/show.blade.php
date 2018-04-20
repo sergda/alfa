@@ -1,52 +1,12 @@
 @extends('front.template')
 
-@if( config('app.locale') == "en" )
-
-    @php
-        $content = $post->en_content;
-        $content_bottom = $post->en_content_bottom;
-        $title = $post->en_title;
-        $description = $post->en_description;
-        $keywords = $post->en_keywords;
-        $previevUrl = $post->en_image_input;
-        $descriptionImage = $post->en_image_description;
-        $slider = $post->en_slide_input;
-    @endphp
-
-@elseif( config('app.locale') == "fr" )
-
-    @php
-        $content = $post->fr_content;
-        $content_bottom = $post->fr_content_bottom;
-        $title = $post->fr_title;
-        $description = $post->fr_description;
-        $keywords = $post->fr_keywords;
-        $previevUrl = $post->fr_image_input;
-        $descriptionImage = $post->fr_image_description;
-        $slider = $post->fr_slide_input;
-    @endphp
-
-@elseif( config('app.locale') == "de" )
-    @php
-        $content = $post->de_content;
-        $content_bottom = $post->de_content_bottom;
-        $title = $post->de_title;
-        $description = $post->de_description;
-        $keywords = $post->de_keywords;
-        $previevUrl = $post->de_image_input;
-        $descriptionImage = $post->de_image_description;
-        $slider = $post->de_slide_input;
-    @endphp
-
-@endif
-
 @section('head')
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title }}</title>
-    <meta name="description" content="{{ $description }}">
-    <meta name="keywords" content="{{ $keywords  }}">
+    <title>{{ $post->title }}</title>
+    <meta name="description" content="{{ $post->description }}">
+    <meta name="keywords" content="{{ $post->keywords  }}">
 
 
 
@@ -55,24 +15,92 @@
 
 @section('main')
 
-    @if( isset($previevUrl) && $previevUrl != '' )
-
-        <section class="text-center">
-            <img data-original="{{  isset($previevUrl) ? $previevUrl : '' }}" src="/img/img1x1.png" class="img-fluid lazy">
-        </section>
-
-    @endif
 
 
-    <section class="jumbotron text-center bodyText marTB10">
-        <div>
-            {!! $content !!}
+    <section class="text-center main-prod">
+        <div class="row detail-block-head">
+            <div class="col-lg-5 detail-text">
+                <div class="name">{{  $post->title }}</div>
+                <div class="text">{!!  $post->detail_text !!}</div>
+                <div class="property">{!!  $post->property !!}</div>
+            </div>
+            <div class="col-lg-7 detail-img">
+                <img src="{{  $post->image_passport }}" alt="{{  $post->title }}">
+            </div>
         </div>
+
+
+        <div class="row detail-block-img">
+            @php
+            $src = str_replace('\\', '/', $post->image_passport_left);
+            @endphp
+            <div class="col-lg-3 img-left" style="background-image: url({{ $src }})"></div>
+
+            <div class="col-lg-3 more-photo">
+
+                <div class="row">
+                    @if(isset($post->slider_input) &&  $post->slider_input != '')
+                        @foreach(json_decode(urldecode($post->slider_input)) as $item)
+                            <div class="col-lg-6">
+                                <img class="img-fluid" src="{{ $item->src }}" alt="{{ $item->alt }}" />
+                            </div>
+                        @endforeach
+                    @endif
+
+                </div>
+
+            </div>
+            @php
+            $src = str_replace('\\', '/', $post->image_passport_right);
+            @endphp
+            <div class="col-lg-3 img-right" style="background-image: url({{ $src }})"></div>
+
+            <div class="col-lg-3 bg-r-right"></div>
+
+        </div>
+
+
+
+
+        <div class="row">
+            <div class="col-lg-12 fedback">
+                <div class="span1"><span> Riceve delle notizie su nuove collezioni </span></div>
+                <div class="span2">
+
+                    <div class="feedbackForm">
+                        <form name="sentMessage" class="form form-register1" id="fedbackForm"  novalidate>
+                            {{ csrf_field() }}
+                            <div class="modal-body form-group">
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="text" name="name" class="form-control" onblur='if(this.value=="") this.placeholder="Nome"' onfocus='if(this.value=="Nome") this.value=""' placeholder="NOME" id="name" required data-validation-required-message="Please, indicate Your Nome" />
+                                        <p class="help-block"></p>
+                                    </div>
+                                    <div class="controls">
+                                        <input type="email" name="email" class="form-control" onblur='if(this.value=="") this.placeholder="Your e-mail"' onfocus='if(this.value=="Your e-mail") this.value=""' placeholder="E-MAIL" id="email" required data-validation-required-message="Please, indicate Your e-mail" />
+                                    </div>
+                                    <input type="hidden" name="name" value="">
+                                    <input type="hidden" name="catalogueFeedback" value="catalogueFeedback">
+                                    <button type="submit" class="btn form-button">
+                                        <span>
+                                            INVIARE
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="success"> </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
 
 
-    <hr>
     @if(isset($slider) &&  $slider != '')
         <div class="row sliderBlock text-center">
             @foreach(json_decode(urldecode($slider)) as $item)

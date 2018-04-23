@@ -111,7 +111,7 @@
         </div>
     </section>
 
-    @if( isset($main_page_slider) )
+    @if( isset($main_page_design) )
         <section class="text-center main-prod">
 
             <div class="design-head">SOCIETA</div>

@@ -37,8 +37,12 @@ class HomeController extends Controller
         return view('front.contatto.show');
     }
 
-    public function storia() {
-        return view('front.storia.show');
+    public function storia(Main $main, Design $design) {
+        $this->design = $design;
+        $main_page_design = $this->design->whereActive(true)->get();
+        $this->model = $main;
+        $main_page_slider = $this->model->whereActive(true)->get();
+        return view('front.storia.show', compact('main_page_slider', 'main_page_design'));
     }
 
     public function collezione(Beds $beds, Mattress $mattress, Curbstones $curbstones, Pouffes $pouffes) {

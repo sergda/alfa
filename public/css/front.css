@@ -9760,7 +9760,7 @@ footer{
   background-image: url('/img/storia.jpg');
 }
 .storia-text{
-  padding: 0 30px;
+  padding: 0 30px !important;
 }
 .storia-text .head{
   font-size: 78px;
@@ -9768,3 +9768,26 @@ footer{
   color: #003399;
 }
 .storia-text .text{}
+.storia-block2{}
+.storia-block2 .head{
+  font-size: 45px;
+  padding: 0 15px;
+}
+.storia-block2 .head.beskonechnost{
+  transform-origin: 0 0;
+  transform: scaleX(2);
+}
+.storia-block2 .text{
+  padding: 0 15px;
+}
+.storia-block2 .img img{
+  width: 100%;
+  padding: 17px 26px;
+}
+.storia-block3 .head{
+  font-weight: 400;
+  font-size: 45px;
+}
+.storia-block3 .text{
+  padding: 0 25px 0 0;
+}

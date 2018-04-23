@@ -4,6 +4,7 @@
 Route::get('/', 'HomeController')->name('home');
 Route::get('/contatto', 'HomeController@contatto');
 Route::get('/collezione', 'HomeController@collezione');
+Route::get('/storia', 'HomeController@storia');
 // Language
 Route::get('language/{lang}', 'LanguageController')
     ->where('lang', implode('|', config('app.languages')));

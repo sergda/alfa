@@ -9443,6 +9443,7 @@ footer{
 }
 .footer-logo-block{
   padding-top: 17px;
+  padding-left: 65px;
 }
 .footer-right-copy{
   position: relative;
@@ -9707,15 +9708,19 @@ footer{
 .detail-block-img > div{
   height: 440px;
 }
-.detail-block-img .img-left, .detail-block-img .img-right{
+.detail-block-img .img-left, .detail-block-img .img-right, .img-more-photo-item, .detail-img{
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
 }
-.more-photo .col-lg-6{
+.more-photo .img-more-photo-item{
   height: 146px;
   position: relative;
-  border: 1px solid #fff;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.img-more-photo-item:nth-child(1), .img-more-photo-item:nth-child(2), .img-more-photo-item:nth-child(3), .img-more-photo-item:nth-child(4) {
+  border-bottom: 1px solid #fff;
 }
 .more-photo .col-lg-6 img{
   width: 100%;
@@ -9747,3 +9752,19 @@ footer{
   z-index: 1;
 
 }
+.storia-img{
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/storia.jpg');
+}
+.storia-text{
+  padding: 0 30px;
+}
+.storia-text .head{
+  font-size: 78px;
+  font-family: Arial;
+  color: #003399;
+}
+.storia-text .text{}

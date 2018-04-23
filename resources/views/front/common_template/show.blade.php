@@ -24,9 +24,7 @@
                 <div class="text">{!!  $post->detail_text !!}</div>
                 <div class="property">{!!  $post->property !!}</div>
             </div>
-            <div class="col-lg-7 detail-img">
-                <img src="{{  $post->image_passport }}" alt="{{  $post->title }}">
-            </div>
+            <div class="col-lg-7 detail-img" style="background-image: url({{ str_replace('\\', '/', $post->image_passport) }})"></div>
         </div>
 
 
@@ -41,9 +39,7 @@
                 <div class="row">
                     @if(isset($post->slider_input) &&  $post->slider_input != '')
                         @foreach(json_decode(urldecode($post->slider_input)) as $item)
-                            <div class="col-lg-6">
-                                <img class="img-fluid" src="{{ $item->src }}" alt="{{ $item->alt }}" />
-                            </div>
+                            <div class="col-lg-6 img-more-photo-item" style="background-image: url({{ str_replace('\\', '/', $item->src) }})"></div>
                         @endforeach
                     @endif
 

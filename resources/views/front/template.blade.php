@@ -23,7 +23,7 @@
 
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
-                                <li class="dropdown" {!! classActivePath('collezione') !!}>
+                                <li class="dropdown @if( strpos(url()->current(), 'collezione') ) active @endif">
                                     {!! link_to('/collezione', 'COLLEZIONE', "title='collezione'" ) !!}
                                     <ul class="dropdown-menu">
                                             <li>

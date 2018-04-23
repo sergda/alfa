@@ -37,6 +37,10 @@ class HomeController extends Controller
         return view('front.contatto.show');
     }
 
+    public function storia() {
+        return view('front.storia.show');
+    }
+
     public function collezione(Beds $beds, Mattress $mattress, Curbstones $curbstones, Pouffes $pouffes) {
 
         //$beds_main = $beds->whereIs_main(true)->whereActive(true)->first();

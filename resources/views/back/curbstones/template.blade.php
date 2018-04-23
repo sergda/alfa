@@ -172,6 +172,13 @@
 
     $(document).ready(function(){
 
+        $(".close_img").on("click",function(){
+            var boxImg = $(this).parent("div.col-md-3");
+            //$(this).hide();
+            $(boxImg).find("img").attr("src","/files/no_photo.png");
+            $(boxImg).find("input").val("");
+        });
+
         $(".sliderxBox").sortable({
             revert:false,
             stop: function() {
